@@ -13,6 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Instrument+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Wix+Madefor+Display:wght@600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/contact-form.css" />
 </head>
 <body class="splash-active">
   <div id="splash" class="splash" role="presentation" aria-hidden="false">
@@ -27,14 +29,26 @@
         <img src="assets/KevinDigital%202.svg" alt="Kevin Digital" class="logo-header" />
       </a>
       <div class="site-header__actions">
-        <nav class="site-nav" data-cursor-nav>
-          <a href="#about" class="cursor-hover">ABOUT ME</a>
-          <a href="#services" class="cursor-hover">SERVICES</a>
-          <a href="#cases" class="cursor-hover">CASE STUDIES</a>
+        <nav class="site-nav" id="site-nav" data-cursor-nav aria-label="Main navigation">
+          <a href="#about" class="cursor-hover site-nav__link">ABOUT ME</a>
+          <a href="#services" class="cursor-hover site-nav__link">SERVICES</a>
+          <a href="#cases" class="cursor-hover site-nav__link">CASE STUDIES</a>
+          <a href="#contact" class="cursor-hover site-nav__link site-nav__link--cta" data-contact-open>Book Consultation</a>
         </nav>
-        <a href="#contact" class="cursor-hover btn-nav-primary">Book Consultation</a>
+        <a href="#contact" class="cursor-hover btn-nav-primary site-header__cta" data-contact-open>Book Consultation</a>
+        <button
+          type="button"
+          class="site-nav-toggle"
+          id="site-nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Open menu"
+        >
+          <span class="site-nav-toggle__bars" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
+    <div class="site-nav-backdrop" id="site-nav-backdrop" hidden aria-hidden="true"></div>
   </header>
 
   <main class="site-shell">
@@ -289,7 +303,7 @@
             <h2 class="text-section-title">Let's Grow Your Digital Presence Together!</h2>
             <p class="text-body-lg">Whether you want to grow your social media channels, build a YouTube strategy for long term reach or plan your stay in Tenerife, I can help you create structured and effective solutions.</p>
           </div>
-          <a href="#" class="cursor-hover btn-cta-primary">
+          <a href="#contact" class="cursor-hover btn-cta-primary" data-contact-open>
             <span>Schedule a Consultation</span>
             <span class="btn-cta-primary__icon">
               <img src="assets/schedule-a-consultation-forward-arrow.svg" alt="" />
@@ -338,6 +352,73 @@
     </footer>
   </main>
 
+  <div id="contact-modal" class="contact-modal" hidden aria-hidden="true">
+    <div class="contact-modal__backdrop" data-contact-close tabindex="-1"></div>
+    <div
+      class="contact-modal__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+    >
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="contact-form__head">
+          <h2 id="contact-modal-title" class="contact-form__title">Start Your Journey With Me</h2>
+          <p class="contact-form__subtitle">Fill in the form and let&rsquo;s get started.</p>
+        </div>
+        <div class="contact-form__fields">
+          <div class="contact-form__field">
+            <input
+              class="contact-form__input"
+              type="text"
+              name="name"
+              placeholder="Name"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="contact-form__field">
+            <input
+              class="contact-form__input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div class="contact-form__field">
+            <input
+              class="contact-form__input"
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              autocomplete="tel"
+            />
+          </div>
+          <div class="contact-form__field">
+            <textarea
+              class="contact-form__textarea"
+              name="message"
+              placeholder="Message"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="contact-form__submit">Schedule a Call</button>
+        </div>
+        <div class="contact-form__success" aria-live="polite">
+          <div class="contact-form__success-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18.5L15 24.5L27 12.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="contact-form__success-title">Successfully submitted</p>
+          <p class="contact-form__success-text">Thank you! We&rsquo;ll get back to you shortly.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div id="video-modal" class="video-modal" hidden aria-hidden="true">
     <div class="video-modal__backdrop" data-video-close tabindex="-1"></div>
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
@@ -378,10 +459,12 @@
 
   <script src="js/splash.js"></script>
   <script src="js/sticky-header.js"></script>
+  <script src="js/mobile-nav.js"></script>
   <script src="js/sticky-card-stack.js"></script>
   <script src="js/scroll-quote-reveal.js"></script>
   <script src="js/kpi-animate.js"></script>
   <script src="js/video-modal.js"></script>
+  <script src="js/contact-modal.js"></script>
   <script src="js/custom-cursor.js"></script>
 </body>
 </html>

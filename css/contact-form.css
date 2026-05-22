@@ -1,0 +1,266 @@
+/**
+ * Contact form popup — from Figma “Form final” specs
+ * (reference: /contact-form.css Figma export)
+ */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 21000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 2rem);
+}
+
+.contact-modal[hidden] {
+  display: none;
+}
+
+.contact-modal.is-open {
+  display: flex;
+}
+
+.contact-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.contact-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(537px, 100%);
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  border: none;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+}
+
+.contact-form {
+  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 3vw, 1.75rem);
+  background: #ffffff;
+  border: none;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.contact-form__head {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 30px;
+}
+
+.contact-form__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 4vw, 28px);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--figma-black);
+}
+
+.contact-form__subtitle {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--figma-black);
+}
+
+.contact-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  background: #fff;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: var(--figma-black);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form__input {
+  padding: 11px 15px;
+  border-radius: 500px;
+  height: 43px;
+}
+
+.contact-form__textarea {
+  padding: 11px 15px;
+  border-radius: 20px;
+  min-height: 105px;
+  resize: vertical;
+}
+
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  border-color: var(--figma-blue-nav);
+  box-shadow: 0 0 0 3px rgba(0, 113, 188, 0.15);
+}
+
+.contact-form__submit {
+  width: 100%;
+  height: 43px;
+  margin-top: 0;
+  padding: 11px 15px;
+  border: none;
+  border-radius: 500px;
+  background: var(--figma-blue-nav);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--figma-white);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-form__submit:hover {
+  opacity: 0.92;
+}
+
+.contact-form__submit:active {
+  transform: scale(0.99);
+}
+
+.contact-form__success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 1rem 0.5rem 0.5rem;
+}
+
+.contact-form__success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(0, 113, 188, 0.14), rgba(77, 232, 244, 0.2));
+  color: var(--figma-blue-nav);
+  animation: contact-success-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+.contact-form__success-title {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 4vw, 26px);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--figma-black);
+  animation: contact-success-fade 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.contact-form__success-text {
+  margin: 0;
+  max-width: 280px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  animation: contact-success-fade 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+}
+
+@keyframes contact-success-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes contact-success-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form.is-sent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.5rem, 4vw, 2rem);
+}
+
+.contact-form.is-sent .contact-form__head,
+.contact-form.is-sent .contact-form__fields {
+  display: none;
+}
+
+.contact-form.is-sent .contact-form__success {
+  display: flex;
+  animation: contact-success-fade 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.contact-modal-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form__success-icon,
+  .contact-form__success-title,
+  .contact-form__success-text,
+  .contact-form.is-sent .contact-form__success {
+    animation: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .contact-modal {
+    padding: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .contact-modal__panel {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-height: 92dvh;
+  }
+
+}

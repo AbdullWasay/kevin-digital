@@ -302,7 +302,7 @@ ul {
   color: #010406;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .site-nav {
     display: flex;
   }
