@@ -207,12 +207,19 @@
         <div class="stack-cards" data-sticky-stack>
           <div class="stack-cards__item">
             <article class="figma-card card-row">
-              <div class="card-row__media card-row__media--play">
+              <button
+                type="button"
+                class="card-row__media card-row__media--play cursor-hover"
+                data-video-open
+                data-video-id="1FeUNJCuHCbXMBTuGNdkEiXBDnWsTh9eC"
+                data-video-title="Laserland Project"
+                aria-label="Play Laserland video"
+              >
                 <img src="assets/video%20cover%201.png" alt="" />
                 <div class="play-overlay">
-                  <img src="assets/play.svg" alt="Play video" />
+                  <img src="assets/play.svg" alt="" />
                 </div>
-              </div>
+              </button>
               <div class="card-row__body">
                 <div class="card-row__intro">
                   <h3 class="text-section-title">Laserland Project</h3>
@@ -231,12 +238,19 @@
 
           <div class="stack-cards__item">
             <article class="figma-card card-row">
-              <div class="card-row__media card-row__media--play">
+              <button
+                type="button"
+                class="card-row__media card-row__media--play cursor-hover"
+                data-video-open
+                data-video-id="1n9mOmSyxir3OXVjBTMqa1w4Cr8xj3TD2"
+                data-video-title="Gradtsummt Project"
+                aria-label="Play Gradtsummt video"
+              >
                 <img src="assets/video%20cover%202.png" alt="" />
                 <div class="play-overlay">
-                  <img src="assets/play.svg" alt="Play video" />
+                  <img src="assets/play.svg" alt="" />
                 </div>
-              </div>
+              </button>
               <div class="card-row__body">
                 <div class="card-row__intro">
                   <h3 class="text-section-title">Gradtsummt Project</h3>
@@ -317,6 +331,19 @@
     </footer>
   </main>
 
+  <div id="video-modal" class="video-modal" hidden aria-hidden="true">
+    <div class="video-modal__backdrop" data-video-close tabindex="-1"></div>
+    <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+      <div class="video-modal__header">
+        <h2 id="video-modal-title" class="video-modal__title"></h2>
+        <button type="button" class="video-modal__close cursor-hover" data-video-close aria-label="Close video">&times;</button>
+      </div>
+      <div class="video-modal__frame-wrap">
+        <iframe id="video-modal-iframe" title="Case study video" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
     (function () {
       var slides = [
@@ -339,6 +366,7 @@
   </script>
   <script src="js/sticky-card-stack.js"></script>
   <script src="js/scroll-quote-reveal.js"></script>
+  <script src="js/video-modal.js"></script>
   <script src="js/custom-cursor.js"></script>
 </body>
 </html>
