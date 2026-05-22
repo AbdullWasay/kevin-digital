@@ -11,7 +11,7 @@
 
     items.forEach((item, index) => {
       item.style.top = STACK_TOP_PX + "px";
-      item.style.zIndex = String(index + 1);
+      item.style.zIndex = String(50 + index);
       if (index < items.length - 1) {
         item.style.marginBottom = "24px";
       }

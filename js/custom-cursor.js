@@ -1,35 +1,36 @@
 (function () {
-  if (window.matchMedia("(pointer: coarse)").matches) return;
+  var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (!canHover) return;
 
-  const gradient1 = document.body.dataset.gradient1;
-  const gradient2 = document.body.dataset.gradient2;
-  if (!gradient1 || !gradient2) return;
+  var glow = document.getElementById("custom-cursor-glow");
+  var pointer = document.getElementById("custom-cursor-pointer");
+  if (!glow || !pointer) return;
 
-  const glow = document.createElement("div");
-  glow.className = "custom-cursor-glow";
-  glow.setAttribute("aria-hidden", "true");
-  glow.style.backgroundImage = `url(${gradient2}), url(${gradient1})`;
-
-  const pointer = document.createElement("div");
-  pointer.className = "custom-cursor-pointer";
-  pointer.setAttribute("aria-hidden", "true");
-  pointer.innerHTML =
-    '<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-    '<path d="M1 1V17.5L4.2 13.8L7.2 19.5L9.5 18.3L6.5 12.6H12.5L1 1Z" fill="currentColor" stroke="white" stroke-width="1.2" stroke-linejoin="round"/></svg>';
-
-  document.body.appendChild(glow);
-  document.body.appendChild(pointer);
   document.body.classList.add("has-custom-cursor");
+  glow.classList.add("is-active");
+  pointer.classList.add("is-active");
 
-  let mx = window.innerWidth / 2;
-  let my = window.innerHeight / 2;
-  let gx = mx;
-  let gy = my;
-  let hover = false;
-  let raf = 0;
+  var mx = window.innerWidth / 2;
+  var my = window.innerHeight / 2;
+  var gx = mx;
+  var gy = my;
+  var hover = false;
+
+  function centerTransform(x, y, scale) {
+    return (
+      "translate3d(" +
+      x +
+      "px, " +
+      y +
+      "px, 0) translate(-50%, -50%) scale(" +
+      scale +
+      ")"
+    );
+  }
 
   function setHover(target) {
-    hover = !!target?.closest(
+    if (!target || !target.closest) return;
+    hover = !!target.closest(
       "a, button, [role='button'], input, textarea, select, label, .cursor-hover"
     );
     glow.classList.toggle("is-hover", hover);
@@ -39,18 +40,24 @@
   function onMove(e) {
     mx = e.clientX;
     my = e.clientY;
-    pointer.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
+    pointer.style.transform = centerTransform(mx, my, hover ? 1.1 : 1);
     setHover(e.target);
   }
 
   function loop() {
-    gx += (mx - gx) * 0.1;
-    gy += (my - gy) * 0.1;
-    const scale = hover ? 1.15 : 1;
-    glow.style.transform = `translate3d(${gx}px, ${gy}px, 0) translate(-50%, -50%) scale(${scale})`;
-    raf = requestAnimationFrame(loop);
+    gx += (mx - gx) * 0.15;
+    gy += (my - gy) * 0.15;
+    glow.style.transform = centerTransform(gx, gy, hover ? 1.08 : 1);
+    requestAnimationFrame(loop);
   }
 
-  window.addEventListener("mousemove", onMove);
-  raf = requestAnimationFrame(loop);
+  window.addEventListener("mousemove", onMove, { passive: true });
+  document.addEventListener(
+    "mouseover",
+    function (e) {
+      setHover(e.target);
+    },
+    { passive: true }
+  );
+  loop();
 })();

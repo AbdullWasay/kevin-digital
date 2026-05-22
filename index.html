@@ -14,10 +14,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Instrument+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Wix+Madefor+Display:wght@600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body
-  data-gradient1="assets/gradient%201.svg"
-  data-gradient2="assets/gradient%202.svg"
->
+<body>
+  <!-- Custom cursor: small gradient glow + circle pointer (desktop) -->
+  <div id="custom-cursor-glow" class="custom-cursor-glow" aria-hidden="true"></div>
+  <div id="custom-cursor-pointer" class="custom-cursor-pointer" aria-hidden="true"></div>
+
   <main class="site-shell">
     <!-- Navigation -->
     <header class="site-header">
@@ -43,8 +44,7 @@
           <div class="hero__copy">
             <h1 class="text-h1">Social Media Manager Helping Businesses Grow.</h1>
             <div class="hero__body text-body">
-              <p>I work as a Social Media Manager and YouTube SEO specialist helping businesses and creators grow their online presence. My work focuses on building structured content strategies that increase visibility and create sustainable audience growth.</p>
-              <p>With experience managing multiple digital channels and publishing more than 1,200 videos, I combine strategy, analytics and execution to build online platforms that generate long term reach.</p>
+              <p>I work as a Social Media Manager and YouTube SEO specialist helping businesses and creators grow their online presence. My work focuses on building structured content strategies that increase visibility and create sustainable audience growth. With experience managing multiple digital channels and publishing more than 1,200 videos, I combine strategy, analytics and execution to build online platforms that generate long term reach.</p>
             </div>
             <a href="#cases" class="cursor-hover btn-hero-outline">VIEW CASE STUDIES</a>
           </div>
@@ -152,7 +152,7 @@
         <div class="stats-quote-wrap">
           <div class="stats-quote">
             <img src="assets/Everyprojectfocuses-speechmark.svg" alt="" />
-            <p class="text-quote">Every project focuses on measurable results such as increased visibility, stronger audience engagement and long term digital reach.</p>
+            <p class="text-quote scroll-quote-reveal" data-scroll-quote>Every project focuses on measurable results such as increased visibility, stronger audience engagement and long term digital reach.</p>
           </div>
         </div>
 
@@ -297,12 +297,15 @@
           <div class="font-footer footer__links">
             <div class="footer__links-title">QUICK LINKS</div>
             <div class="footer__links-row">
-              <a href="#" class="cursor-hover">HOME</a><span class="footer__sep">|</span>
-              <a href="#about" class="cursor-hover">ABOUT</a><span class="footer__sep">|</span>
+              <a href="#" class="cursor-hover">HOME</a>
+              <span class="footer__sep">|</span>
+              <a href="#about" class="cursor-hover">ABOUT</a>
+              <span class="footer__sep">|</span>
               <a href="#services" class="cursor-hover">SERVICES</a>
             </div>
             <div class="footer__links-row">
-              <a href="#cases" class="cursor-hover">CASE STUDIES</a><span class="footer__sep">|</span>
+              <a href="#cases" class="cursor-hover">CASE STUDIES</a>
+              <span class="footer__sep">|</span>
               <a href="#contact" class="cursor-hover">CONTACT</a>
             </div>
           </div>
@@ -335,6 +338,7 @@
     })();
   </script>
   <script src="js/sticky-card-stack.js"></script>
+  <script src="js/scroll-quote-reveal.js"></script>
   <script src="js/custom-cursor.js"></script>
 </body>
 </html>
