@@ -22,6 +22,77 @@ body {
   margin: 0;
   overflow-x: clip;
   text-rendering: optimizeLegibility;
+  background-color: var(--figma-page-bg);
+}
+
+/* Splash screen */
+body.splash-active {
+  overflow: hidden;
+}
+
+body.splash-active .custom-cursor-glow,
+body.splash-active .custom-cursor-pointer {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 50000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+
+.splash.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.splash__logo {
+  width: min(300px, 72vw);
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.94) translateY(8px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.splash.is-logo-in .splash__logo {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+body.splash-active:not(.splash-done) .site-shell {
+  opacity: 0;
+}
+
+body.splash-done .site-shell {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash,
+  .splash__logo {
+    transition: none;
+  }
+
+  .splash {
+    display: none;
+  }
 }
 
 a {
@@ -56,50 +127,54 @@ ul {
 
 /* Layout */
 .site-shell {
+  position: relative;
   width: 100%;
   max-width: var(--figma-page-width);
   margin-inline: auto;
   overflow-x: clip;
+  opacity: 1;
+  transition: opacity 1s ease 0.15s;
+  isolation: isolate;
+}
+
+/* Background image layer (below cursor glow + all content) */
+.site-shell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8595px;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--figma-page-bg);
+  background-image: url("../assets/HOME%20PAGE.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.site-shell > *:not(.custom-cursor-glow) {
+  position: relative;
+  z-index: 2;
+}
+
+.site-shell .custom-cursor-glow {
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-shell {
+    opacity: 1;
+    transition: none;
+  }
 }
 
 .gradient-bg {
   position: relative;
   overflow-x: clip;
   overflow-y: visible;
-  background-color: var(--figma-page-bg);
-}
-
-.gradient-bg > * {
-  position: relative;
-  z-index: 1;
-}
-
-.gradient-bg::before {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-  inset: 0;
-  background-image:
-    url("../assets/gradient%202.svg"),
-    url("../assets/gradient%201.svg");
-  background-repeat: no-repeat;
-  background-size: 90% auto, 75% auto;
-  background-position: 100% 8%, 0% 92%;
-}
-
-.gradient-bg::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-  width: 403px;
-  height: 403px;
-  right: -5%;
-  top: 15%;
-  background: var(--figma-blob-cyan);
-  filter: blur(200px);
-  opacity: 0.55;
+  background: transparent;
 }
 
 .gradient-cta-area {
@@ -146,6 +221,8 @@ ul {
 
 /* Nav */
 .site-header {
+  position: relative;
+  z-index: 100;
   background: var(--figma-white);
 }
 
@@ -610,12 +687,12 @@ body.video-modal-open {
   max-width: 921px;
 }
 
-/* Scroll-to-read quote (faded gray → black as you scroll) */
-.scroll-quote-reveal__word {
+/* Scroll-to-read quote (character by character, gray → black) */
+.scroll-quote-reveal__char {
   color: rgba(0, 0, 0, 0.22);
 }
 
-.scroll-quote-reveal__word.is-read {
+.scroll-quote-reveal__char.is-read {
   color: var(--figma-black);
 }
 
@@ -632,6 +709,64 @@ body.video-modal-open {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  opacity: 0;
+  transform: translate3d(0, 56px, 0);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kpi-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.kpi-item__number .kpi-item__value {
+  display: inline-block;
+  min-width: 0.15em;
+  transform-origin: right center;
+}
+
+.kpi-item__number .kpi-item__value:empty {
+  visibility: hidden;
+}
+
+.kpi-item__value.is-done {
+  animation: kpi-number-bump 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes kpi-number-bump {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.045);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.kpi-item__detail p {
+  opacity: 0;
+  transform: translate3d(-16px, 0, 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+.kpi-item.is-visible .kpi-item__detail p {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.kpi-progress-row__fill {
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kpi-item.is-visible .kpi-progress-row__fill {
+  width: var(--kpi-fill, 75%);
 }
 
 @media (min-width: 768px) {
@@ -660,8 +795,35 @@ body.video-modal-open {
   max-width: 752px;
 }
 
-.kpi-item__detail p {
+.kpi-item__detail > p.text-kpi-label {
   padding-top: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kpi-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .kpi-item__detail p {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .kpi-progress-row__fill {
+    width: var(--kpi-fill, 75%) !important;
+    transition: none;
+  }
+
+  .kpi-progress-row__fill::after {
+    animation: none !important;
+  }
+
+  .kpi-item__value.is-done {
+    animation: none;
+  }
 }
 
 /* Carousel */
@@ -878,12 +1040,22 @@ body.video-modal-open {
 
 .stack-cards__item {
   position: sticky;
-  z-index: 50;
+  z-index: 10;
 }
 
 .figma-card {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  background: var(--figma-white);
+}
+
+.site-shell img,
+.site-shell video,
+.site-shell article,
+.site-shell .marquee-track,
+.site-shell .carousel-wrap {
+  position: relative;
+  z-index: 2;
 }
 
 .stack-cards__item--covered {
@@ -896,7 +1068,7 @@ body.video-modal-open {
   pointer-events: none;
 }
 
-/* Custom cursor: compact gradient + circle pointer */
+/* Custom cursor — gradient glow + circle (expands on nav text hover) */
 body.has-custom-cursor,
 body.has-custom-cursor a,
 body.has-custom-cursor button {
@@ -908,30 +1080,41 @@ body.has-custom-cursor button {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 2;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  z-index: 1;
+  width: min(520px, 55vw);
+  height: min(520px, 55vh);
   will-change: transform;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.custom-cursor-glow__mesh {
+  position: absolute;
+  inset: 5%;
   background:
-    radial-gradient(circle at 40% 45%, rgba(120, 140, 255, 0.22) 0%, transparent 72%),
-    radial-gradient(circle at 60% 55%, rgba(100, 220, 255, 0.2) 0%, transparent 68%),
-    radial-gradient(circle at 50% 50%, rgba(220, 160, 255, 0.18) 0%, transparent 75%);
-  filter: blur(18px);
+    radial-gradient(
+      circle at 38% 42%,
+      rgba(157, 80, 255, 0.55) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 62% 58%,
+      rgba(77, 232, 244, 0.5) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(157, 80, 255, 0.35) 0%,
+      rgba(77, 232, 244, 0.25) 35%,
+      transparent 50%
+    );
+  background-repeat: no-repeat;
+  filter: blur(56px);
+  mix-blend-mode: multiply;
+  opacity: 0.62;
+  transition: opacity 0.4s ease;
 }
 
-.custom-cursor-glow.is-active {
-  visibility: visible;
-  opacity: 0.5;
-}
-
-.custom-cursor-glow.is-active.is-hover {
-  opacity: 0.58;
-  width: 112px;
-  height: 112px;
+.custom-cursor-glow.is-hover .custom-cursor-glow__mesh {
+  opacity: 0.75;
 }
 
 .custom-cursor-pointer {
@@ -939,31 +1122,89 @@ body.has-custom-cursor button {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 10000;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--figma-black);
-  border: none;
-  box-shadow: none;
+  z-index: 10001;
+  width: 0;
+  height: 0;
   will-change: transform;
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
 }
 
-.custom-cursor-pointer.is-active {
-  visibility: visible;
+/* Default: small solid dot */
+.custom-cursor-pointer__dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: #3a3832;
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+/* Nav hover lens — solid circle + white zoomed text */
+.custom-cursor-pointer__lens {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  background: #3a3832;
+  border: none;
+  box-shadow: none;
+  opacity: 0;
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.custom-cursor-pointer__lens-zoom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transform-origin: 0 0;
+  color: #ffffff;
+  will-change: transform, left, top;
+}
+
+.custom-cursor-pointer.is-nav-hover .custom-cursor-pointer__lens {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
   opacity: 1;
 }
 
-.custom-cursor-pointer.is-hover {
-  width: 12px;
-  height: 12px;
+.custom-cursor-pointer.is-nav-hover .custom-cursor-pointer__dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  opacity: 0;
 }
 
-/* Hide on phones/tablets only */
-@media (hover: none), (pointer: coarse) {
+.custom-cursor-pointer.is-hover:not(.is-nav-hover) .custom-cursor-pointer__dot {
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+}
+
+.site-nav a {
+  position: relative;
+}
+
+/* Touch-only devices: hide custom cursor */
+@media (hover: none) {
   body.has-custom-cursor,
   body.has-custom-cursor a,
   body.has-custom-cursor button {

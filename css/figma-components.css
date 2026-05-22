@@ -150,14 +150,43 @@
   width: 100%;
   height: 2px;
   background: var(--figma-muted-line);
+  overflow: hidden;
 }
 
-.kpi-progress-row::before {
+.kpi-progress-row__fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--figma-black);
+  transform-origin: left center;
+  position: relative;
+}
+
+.kpi-item.is-visible .kpi-progress-row__fill::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 32px;
-  height: 2px;
-  background: var(--figma-black);
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  animation: kpi-bar-shimmer 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes kpi-bar-shimmer {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }

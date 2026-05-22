@@ -4,7 +4,9 @@
 
 :root {
   /* Canvas */
-  --figma-page-bg: #eeeaff;
+  --figma-page-bg: #f3f0ff;
+  --figma-mesh-purple: #9d50ff;
+  --figma-mesh-cyan: #4de8f4;
   --figma-page-radius: 14px;
   --figma-page-width: 1440px;
   --figma-content-max: 1280px;

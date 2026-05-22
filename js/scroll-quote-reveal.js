@@ -3,28 +3,26 @@
   if (!el) return;
 
   var text = el.textContent.trim();
-  var words = text.split(/\s+/).filter(Boolean);
+  var chars = Array.from(text);
 
   el.textContent = "";
   el.classList.add("scroll-quote-reveal");
 
-  words.forEach(function (word, i) {
+  chars.forEach(function (ch) {
     var span = document.createElement("span");
-    span.className = "scroll-quote-reveal__word";
-    span.textContent = word;
+    span.className = "scroll-quote-reveal__char";
+    span.textContent = ch;
     el.appendChild(span);
-    if (i < words.length - 1) {
-      el.appendChild(document.createTextNode(" "));
-    }
   });
 
-  var wordEls = el.querySelectorAll(".scroll-quote-reveal__word");
+  var charEls = el.querySelectorAll(".scroll-quote-reveal__char");
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function update() {
     if (reducedMotion) {
-      wordEls.forEach(function (w) {
-        w.classList.add("is-read");
+      charEls.forEach(function (c) {
+        c.classList.add("is-read");
+        c.style.color = "";
       });
       return;
     }
@@ -37,13 +35,13 @@
     var progress = (start - rect.top) / (start - end + rect.height * 0.6);
     progress = Math.max(0, Math.min(1, progress));
 
-    var total = wordEls.length;
-    wordEls.forEach(function (word, i) {
-      var wordProgress = progress * total - i;
-      var t = Math.max(0, Math.min(1, wordProgress));
+    var total = charEls.length;
+    charEls.forEach(function (char, i) {
+      var charProgress = progress * total - i;
+      var t = Math.max(0, Math.min(1, charProgress));
       var alpha = 0.22 + t * 0.78;
-      word.style.color = "rgba(0, 0, 0, " + alpha.toFixed(3) + ")";
-      word.classList.toggle("is-read", t >= 0.99);
+      char.style.color = "rgba(0, 0, 0, " + alpha.toFixed(3) + ")";
+      char.classList.toggle("is-read", t >= 0.99);
     });
   }
 

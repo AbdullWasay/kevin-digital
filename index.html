@@ -14,12 +14,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Instrument+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Wix+Madefor+Display:wght@600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <!-- Custom cursor: small gradient glow + circle pointer (desktop) -->
-  <div id="custom-cursor-glow" class="custom-cursor-glow" aria-hidden="true"></div>
-  <div id="custom-cursor-pointer" class="custom-cursor-pointer" aria-hidden="true"></div>
+<body class="splash-active">
+  <div id="splash" class="splash" role="presentation" aria-hidden="false">
+    <div class="splash__inner">
+      <img src="assets/KevinDigital%202.svg" alt="Kevin Digital" class="splash__logo" width="320" height="80" />
+    </div>
+  </div>
+
+  <div id="custom-cursor-pointer" class="custom-cursor-pointer is-active" aria-hidden="true">
+    <div class="custom-cursor-pointer__lens" aria-hidden="true">
+      <div class="custom-cursor-pointer__lens-zoom"></div>
+    </div>
+    <span class="custom-cursor-pointer__dot"></span>
+  </div>
 
   <main class="site-shell">
+    <div id="custom-cursor-glow" class="custom-cursor-glow is-active" aria-hidden="true">
+      <div class="custom-cursor-glow__mesh" aria-hidden="true"></div>
+    </div>
     <!-- Navigation -->
     <header class="site-header">
       <div class="page-container site-header__inner">
@@ -27,7 +39,7 @@
           <img src="assets/KevinDigital%202.svg" alt="Kevin Digital" class="logo-header" />
         </a>
         <div class="site-header__actions">
-          <nav class="site-nav">
+          <nav class="site-nav" data-cursor-nav>
             <a href="#about" class="cursor-hover">ABOUT ME</a>
             <a href="#services" class="cursor-hover">SERVICES</a>
             <a href="#cases" class="cursor-hover">CASE STUDIES</a>
@@ -156,39 +168,39 @@
           </div>
         </div>
 
-        <ul class="kpi-list">
-          <li class="kpi-item">
-            <div class="text-kpi-number kpi-item__number">250k+</div>
+        <ul class="kpi-list" data-kpi-list>
+          <li class="kpi-item" data-kpi data-value="250" data-unit="k" data-suffix="+" data-fill="88">
+            <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
-              <div class="kpi-progress-row"></div>
+              <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
               <p class="text-kpi-label">Social Media Reach</p>
             </div>
           </li>
-          <li class="kpi-item">
-            <div class="text-kpi-number kpi-item__number">1.1M+</div>
+          <li class="kpi-item" data-kpi data-value="1.1" data-unit="M" data-suffix="+" data-fill="100">
+            <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
-              <div class="kpi-progress-row"></div>
+              <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
               <p class="text-kpi-label">TikTok Views Generated</p>
             </div>
           </li>
-          <li class="kpi-item">
-            <div class="text-kpi-number kpi-item__number">1200+</div>
+          <li class="kpi-item" data-kpi data-value="1200" data-unit="" data-suffix="+" data-fill="76">
+            <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
-              <div class="kpi-progress-row"></div>
+              <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
               <p class="text-kpi-label">YouTube Videos Managed</p>
             </div>
           </li>
-          <li class="kpi-item">
-            <div class="text-kpi-number kpi-item__number">1500+</div>
+          <li class="kpi-item" data-kpi data-value="1500" data-unit="" data-suffix="+" data-fill="82">
+            <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
-              <div class="kpi-progress-row"></div>
+              <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
               <p class="text-kpi-label">Monetized Digital Channels</p>
             </div>
           </li>
-          <li class="kpi-item">
-            <div class="text-kpi-number kpi-item__number">1200+</div>
+          <li class="kpi-item" data-kpi data-value="1200" data-unit="" data-suffix="+" data-fill="71">
+            <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
-              <div class="kpi-progress-row"></div>
+              <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
               <p class="text-kpi-label">Consistent Audience Growth</p>
             </div>
           </li>
@@ -364,8 +376,10 @@
       });
     })();
   </script>
+  <script src="js/splash.js"></script>
   <script src="js/sticky-card-stack.js"></script>
   <script src="js/scroll-quote-reveal.js"></script>
+  <script src="js/kpi-animate.js"></script>
   <script src="js/video-modal.js"></script>
   <script src="js/custom-cursor.js"></script>
 </body>
