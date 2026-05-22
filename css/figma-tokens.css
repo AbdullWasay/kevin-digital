@@ -1,0 +1,72 @@
+/**
+ * Design tokens extracted from figma-copy-as-code.css (1440px HOME PAGE)
+ */
+
+:root {
+  /* Canvas */
+  --figma-page-bg: #eeeaff;
+  --figma-page-radius: 14px;
+  --figma-page-width: 1440px;
+  --figma-content-max: 1280px;
+  /* (1440 - 1280) / 2 — side gutters on the 1440 artboard */
+  --figma-side-margin: calc((var(--figma-page-width) - var(--figma-content-max)) / 2);
+
+  /* Brand colors */
+  --figma-blue: #0b7bc5;
+  --figma-blue-nav: #0071bc;
+  --figma-black: #000000;
+  --figma-white: #ffffff;
+  --figma-card-border: rgba(1, 4, 6, 0.15);
+  --figma-muted-line: rgba(0, 0, 0, 0.1);
+
+  /* Gradient blobs */
+  --figma-blob-blue: #001aff;
+  --figma-blob-cyan: #00c2ff;
+  --figma-blob-magenta: #db00ff;
+  --figma-blob-mint: #00ffa3;
+
+  /* Typography families */
+  --font-display: "Funnel Display", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-ui: "Wix Madefor Display", system-ui, sans-serif;
+  --font-footer: "Instrument Sans", system-ui, sans-serif;
+
+  /* Type scale */
+  --text-h1-size: 55px;
+  --text-h1-lh: 60px;
+  --text-h1-ls: -0.01em;
+  --text-section-size: 55px;
+  --text-section-lh: 1;
+  --text-body-size: 16px;
+  --text-body-lh: 1.5;
+  --text-body-lg-size: 18px;
+  --text-quote-size: 40px;
+  --text-quote-lh: 1.1;
+  --text-kpi-num-size: 80px;
+  --text-kpi-num-lh: 1.2;
+  --text-kpi-label-size: 40px;
+  --text-kpi-label-lh: 0.98;
+
+  /* Spacing */
+  --space-section: 80px;
+  --space-section-lg: 112px;
+  --space-card-pad: 48px;
+  --space-card-gap: 80px;
+
+  /* Radii */
+  --radius-card: 35px;
+  --radius-image: 30px;
+  --radius-hero-image: 30px;
+  --radius-btn-pill: 500px;
+  --radius-btn-cta: 12px;
+
+  /* Components */
+  --hero-copy-width: 760px;
+  --hero-copy-min-h: 288px;
+  --hero-btn-width: 208px;
+  --hero-btn-height: 57px;
+  --cta-btn-width: 375px;
+  --cta-btn-height: 89px;
+  --kpi-number-width: 320px;
+  --kpi-row-gap: 80px;
+}
