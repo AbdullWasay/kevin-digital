@@ -21,26 +21,28 @@
     </div>
   </div>
 
+  <header class="site-header" id="site-header">
+    <div class="page-container site-header__inner">
+      <a href="#" class="cursor-hover">
+        <img src="assets/KevinDigital%202.svg" alt="Kevin Digital" class="logo-header" />
+      </a>
+      <div class="site-header__actions">
+        <nav class="site-nav" data-cursor-nav>
+          <a href="#about" class="cursor-hover">ABOUT ME</a>
+          <a href="#services" class="cursor-hover">SERVICES</a>
+          <a href="#cases" class="cursor-hover">CASE STUDIES</a>
+        </nav>
+        <a href="#contact" class="cursor-hover btn-nav-primary">Book Consultation</a>
+      </div>
+    </div>
+  </header>
+
   <main class="site-shell">
     <div id="custom-cursor-glow" class="custom-cursor-glow is-active" aria-hidden="true">
       <div class="custom-cursor-glow__mesh" aria-hidden="true"></div>
     </div>
-    <!-- Navigation -->
-    <header class="site-header">
-      <div class="page-container site-header__inner">
-        <a href="#" class="cursor-hover">
-          <img src="assets/KevinDigital%202.svg" alt="Kevin Digital" class="logo-header" />
-        </a>
-        <div class="site-header__actions">
-          <nav class="site-nav" data-cursor-nav>
-            <a href="#about" class="cursor-hover">ABOUT ME</a>
-            <a href="#services" class="cursor-hover">SERVICES</a>
-            <a href="#cases" class="cursor-hover">CASE STUDIES</a>
-          </nav>
-          <a href="#contact" class="cursor-hover btn-nav-primary">Book Consultation</a>
-        </div>
-      </div>
-    </header>
+    <!-- Spacer reserves space for fixed header -->
+    <div class="site-header-spacer" id="site-header-spacer" aria-hidden="true"></div>
 
     <!-- Hero -->
     <section id="about" class="gradient-bg hero-section">
@@ -375,6 +377,7 @@
   </div>
 
   <script src="js/splash.js"></script>
+  <script src="js/sticky-header.js"></script>
   <script src="js/sticky-card-stack.js"></script>
   <script src="js/scroll-quote-reveal.js"></script>
   <script src="js/kpi-animate.js"></script>
