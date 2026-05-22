@@ -5,12 +5,14 @@
   var pointer = document.getElementById("custom-cursor-pointer");
   if (!glow || !pointer) return;
 
-  var lensZoom = pointer.querySelector(".custom-cursor-pointer__lens-zoom");
-  var LENS_SIZE = 48;
-  var MAGNIFY = 1.75;
-  var NAV_SELECTOR = "[data-cursor-nav] a, .site-header .site-nav a";
-  var HOVER_SELECTOR =
-    "a, button, [role='button'], input, textarea, select, label, .cursor-hover";
+  var lens = pointer.querySelector(".custom-cursor-pointer__lens");
+  var dot = pointer.querySelector(".custom-cursor-pointer__dot");
+  if (!lens || !dot) return;
+
+  var CIRCLE_OFFSET_X = -4;
+  var CIRCLE_OFFSET_Y = -4;
+  var LENS_HOVER_SELECTOR =
+    "a, button, [role='button'], img, input, textarea, select, label, .cursor-hover";
 
   document.body.classList.add("has-custom-cursor");
 
@@ -18,9 +20,7 @@
   var my = window.innerHeight / 2;
   var gx = mx;
   var gy = my;
-  var hover = false;
-  var navHover = false;
-  var activeNavLink = null;
+  var lensHover = false;
 
   function glowTransform(x, y, scale) {
     return (
@@ -34,77 +34,54 @@
     );
   }
 
-  function pointerTransform(x, y) {
-    return "translate3d(" + x + "px, " + y + "px, 0)";
+  function circlePos(x, y) {
+    return { x: x + CIRCLE_OFFSET_X, y: y + CIRCLE_OFFSET_Y };
   }
 
-  function updateMagnifier(link, x, y) {
-    if (!lensZoom || !link) return;
-
-    var cs = window.getComputedStyle(link);
-    var rect = link.getBoundingClientRect();
-    var localX = x - rect.left;
-    var localY = y - rect.top;
-
-    lensZoom.textContent = link.textContent;
-    lensZoom.style.fontFamily = cs.fontFamily;
-    lensZoom.style.fontSize = cs.fontSize;
-    lensZoom.style.fontWeight = cs.fontWeight;
-    lensZoom.style.letterSpacing = cs.letterSpacing;
-    lensZoom.style.textTransform = cs.textTransform;
-    lensZoom.style.color = "#ffffff";
-    lensZoom.style.lineHeight = cs.lineHeight;
-
-    lensZoom.style.transform = "scale(" + MAGNIFY + ")";
-    lensZoom.style.left = LENS_SIZE / 2 - localX * MAGNIFY + "px";
-    lensZoom.style.top = LENS_SIZE / 2 - localY * MAGNIFY + "px";
+  function placeCursor(x, y) {
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
   }
 
-  function clearMagnifier() {
-    activeNavLink = null;
-    if (lensZoom) lensZoom.textContent = "";
+  function isLensTarget(target) {
+    if (!target || !target.closest) return false;
+    if (target.closest(".splash, #splash")) return false;
+    return !!target.closest(LENS_HOVER_SELECTOR);
   }
 
   function setHover(target) {
     if (!target || !target.closest) return;
 
-    var link = target.closest(NAV_SELECTOR);
-    navHover = !!link;
-    hover = !!target.closest(HOVER_SELECTOR);
-
-    if (link) {
-      activeNavLink = link;
-      updateMagnifier(link, mx, my);
-    } else {
-      clearMagnifier();
-    }
-
-    pointer.classList.toggle("is-nav-hover", navHover);
-    pointer.classList.toggle("is-hover", hover && !navHover);
-    glow.classList.toggle("is-hover", hover);
+    lensHover = isLensTarget(target);
+    pointer.classList.toggle("is-lens-hover", lensHover);
+    glow.classList.toggle("is-hover", lensHover);
   }
 
   function onMove(e) {
     mx = e.clientX;
     my = e.clientY;
-    pointer.style.transform = pointerTransform(mx, my);
-
-    if (activeNavLink) {
-      updateMagnifier(activeNavLink, mx, my);
-    }
-
+    var c = circlePos(mx, my);
+    placeCursor(c.x, c.y);
     setHover(e.target);
   }
 
   var LAG = 0.045;
 
   function loop() {
-    gx += (mx - gx) * LAG;
-    gy += (my - gy) * LAG;
-    var scale = hover ? 1.12 : 1;
+    var c = circlePos(mx, my);
+    gx += (c.x - gx) * LAG;
+    gy += (c.y - gy) * LAG;
+    var scale = lensHover ? 1.12 : 1;
     glow.style.transform = glowTransform(gx, gy, scale);
     requestAnimationFrame(loop);
   }
+
+  placeCursor(
+    circlePos(mx, my).x,
+    circlePos(mx, my).y
+  );
 
   window.addEventListener("mousemove", onMove, { passive: true });
   document.addEventListener(

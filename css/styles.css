@@ -31,8 +31,8 @@ body.splash-active {
 }
 
 body.splash-active .custom-cursor-glow,
-body.splash-active .custom-cursor-pointer {
-  opacity: 0 !important;
+body.splash-active .custom-cursor-pointer__lens,
+body.splash-active .custom-cursor-pointer__dot {
   visibility: hidden !important;
 }
 
@@ -1068,13 +1068,7 @@ body.video-modal-open {
   pointer-events: none;
 }
 
-/* Custom cursor — gradient glow + circle (expands on nav text hover) */
-body.has-custom-cursor,
-body.has-custom-cursor a,
-body.has-custom-cursor button {
-  cursor: none !important;
-}
-
+/* Custom cursor — gradient glow + circle; native cursor stays visible */
 .custom-cursor-glow {
   pointer-events: none;
   position: fixed;
@@ -1117,86 +1111,60 @@ body.has-custom-cursor button {
   opacity: 0.75;
 }
 
-.custom-cursor-pointer {
-  pointer-events: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 10001;
-  width: 0;
-  height: 0;
-  will-change: transform;
+/* Wrapper has no box — lens/dot stack over page for mix-blend-mode */
+#custom-cursor-pointer {
+  display: contents;
 }
 
 /* Default: small solid dot */
 .custom-cursor-pointer__dot {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
+  z-index: 10001;
   display: block;
   width: 8px;
   height: 8px;
-  margin: -4px 0 0 -4px;
   border-radius: 50%;
   background: #3a3832;
-  transition:
-    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    margin 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.3s ease;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s ease;
 }
 
-/* Nav hover lens — solid circle + white zoomed text */
+/* X-ray lens — inverts page content inside the circle */
 .custom-cursor-pointer__lens {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  width: 0;
-  height: 0;
-  margin: 0;
+  z-index: 10002;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  overflow: hidden;
   pointer-events: none;
-  background: #3a3832;
-  border: none;
-  box-shadow: none;
-  opacity: 0;
+  background: transparent;
+  -webkit-backdrop-filter: invert(1);
+  backdrop-filter: invert(1);
+  transform: translate(-50%, -50%);
+  visibility: hidden;
   transition:
     width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    margin 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.3s ease;
+    visibility 0s linear 0.4s;
 }
 
-.custom-cursor-pointer__lens-zoom {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  pointer-events: none;
-  transform-origin: 0 0;
-  color: #ffffff;
-  will-change: transform, left, top;
+#custom-cursor-pointer.is-lens-hover .custom-cursor-pointer__lens {
+  width: 72px;
+  height: 72px;
+  visibility: visible;
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s;
 }
 
-.custom-cursor-pointer.is-nav-hover .custom-cursor-pointer__lens {
-  width: 48px;
-  height: 48px;
-  margin: -24px 0 0 -24px;
-  opacity: 1;
-}
-
-.custom-cursor-pointer.is-nav-hover .custom-cursor-pointer__dot {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
+#custom-cursor-pointer.is-lens-hover .custom-cursor-pointer__dot {
   opacity: 0;
-}
-
-.custom-cursor-pointer.is-hover:not(.is-nav-hover) .custom-cursor-pointer__dot {
-  width: 11px;
-  height: 11px;
-  margin: -5.5px 0 0 -5.5px;
 }
 
 .site-nav a {
@@ -1205,12 +1173,6 @@ body.has-custom-cursor button {
 
 /* Touch-only devices: hide custom cursor */
 @media (hover: none) {
-  body.has-custom-cursor,
-  body.has-custom-cursor a,
-  body.has-custom-cursor button {
-    cursor: auto !important;
-  }
-
   .custom-cursor-glow,
   .custom-cursor-pointer {
     display: none !important;
