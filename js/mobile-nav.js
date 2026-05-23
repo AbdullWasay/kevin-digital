@@ -13,7 +13,7 @@
   function setOpen(open) {
     document.body.classList.toggle("nav-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
     if (backdrop) {
       backdrop.hidden = !open;
       backdrop.setAttribute("aria-hidden", open ? "false" : "true");

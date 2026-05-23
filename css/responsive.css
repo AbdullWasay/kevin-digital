@@ -102,12 +102,6 @@
     flex-wrap: nowrap;
   }
 
-  .lang-dropdown__trigger {
-    height: 2rem;
-    padding: 0 0.5rem 0 0.6rem;
-    font-size: 12px;
-  }
-
   .site-header__cta.btn-nav-primary {
     padding: 6px 12px;
     font-size: 13px;

@@ -6,9 +6,6 @@
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function getText() {
-    if (window.KDi18n && el.getAttribute("data-i18n")) {
-      return window.KDi18n.t(el.getAttribute("data-i18n"));
-    }
     return el.textContent.trim();
   }
 
@@ -60,8 +57,4 @@
   update();
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
-  window.addEventListener("kd:language-change", function () {
-    buildChars();
-    update();
-  });
 })();
