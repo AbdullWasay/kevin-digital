@@ -2,23 +2,34 @@
   var el = document.querySelector("[data-scroll-quote]");
   if (!el) return;
 
-  var text = el.textContent.trim();
-  var chars = Array.from(text);
-
-  el.textContent = "";
-  el.classList.add("scroll-quote-reveal");
-
-  chars.forEach(function (ch) {
-    var span = document.createElement("span");
-    span.className = "scroll-quote-reveal__char";
-    span.textContent = ch;
-    el.appendChild(span);
-  });
-
-  var charEls = el.querySelectorAll(".scroll-quote-reveal__char");
+  var charEls = [];
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  function getText() {
+    if (window.KDi18n && el.getAttribute("data-i18n")) {
+      return window.KDi18n.t(el.getAttribute("data-i18n"));
+    }
+    return el.textContent.trim();
+  }
+
+  function buildChars() {
+    var text = getText();
+    el.textContent = "";
+    el.classList.add("scroll-quote-reveal");
+    charEls = [];
+
+    Array.from(text).forEach(function (ch) {
+      var span = document.createElement("span");
+      span.className = "scroll-quote-reveal__char";
+      span.textContent = ch;
+      el.appendChild(span);
+      charEls.push(span);
+    });
+  }
+
   function update() {
+    if (charEls.length === 0) return;
+
     if (reducedMotion) {
       charEls.forEach(function (c) {
         c.classList.add("is-read");
@@ -45,7 +56,12 @@
     });
   }
 
+  buildChars();
   update();
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
+  window.addEventListener("kd:language-change", function () {
+    buildChars();
+    update();
+  });
 })();

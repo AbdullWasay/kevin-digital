@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kevin Digital — Social Media Manager &amp; YouTube SEO</title>
-  <meta name="description" content="Social Media Manager and YouTube SEO specialist helping businesses and creators grow their online presence." />
+  <meta name="description" content="Social Media Manager und YouTube-SEO-Spezialist für Unternehmen und Creator mit Fokus auf Reichweite und nachhaltiges Wachstum." />
   <meta property="og:title" content="Kevin Digital — Social Media Manager &amp; YouTube SEO" />
   <meta property="og:description" content="Social Media Manager and YouTube SEO specialist helping businesses and creators grow their online presence." />
   <meta property="og:type" content="website" />
@@ -29,27 +29,57 @@
         <img src="assets/KevinDigital%202.svg" alt="Kevin Digital" class="logo-header" />
       </a>
       <div class="site-header__actions">
-        <nav class="site-nav" id="site-nav" data-cursor-nav aria-label="Main navigation">
-          <a href="#about" class="cursor-hover site-nav__link">ABOUT ME</a>
-          <a href="#services" class="cursor-hover site-nav__link">SERVICES</a>
-          <a href="#cases" class="cursor-hover site-nav__link">CASE STUDIES</a>
-          <a href="#contact" class="cursor-hover site-nav__link site-nav__link--cta" data-contact-open>Book Consultation</a>
+        <nav class="site-nav" id="site-nav" data-cursor-nav aria-label="Hauptnavigation">
+          <a href="#about" class="cursor-hover site-nav__link" data-i18n="nav.about">ÜBER MICH</a>
+          <a href="#services" class="cursor-hover site-nav__link" data-i18n="nav.services">LEISTUNGEN</a>
+          <a href="#cases" class="cursor-hover site-nav__link" data-i18n="nav.cases">CASE STUDIES</a>
+          <a href="#contact" class="cursor-hover site-nav__link site-nav__link--cta" data-contact-open data-i18n="nav.book">Beratung buchen</a>
         </nav>
-        <a href="#contact" class="cursor-hover btn-nav-primary site-header__cta" data-contact-open>Book Consultation</a>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button
+            type="button"
+            class="lang-dropdown__trigger cursor-hover"
+            id="lang-dropdown-trigger"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="lang-dropdown-menu"
+            data-i18n-aria="a11y.lang"
+          >
+            <span class="lang-dropdown__code">DE</span>
+            <svg class="lang-dropdown__icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-dropdown__menu" id="lang-dropdown-menu" role="listbox" hidden>
+            <li role="presentation">
+              <button type="button" class="lang-dropdown__option is-active" data-lang="de" role="option" aria-selected="true">
+                <span class="lang-dropdown__option-code">DE</span>
+                <span data-i18n="lang.de">Deutsch</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" class="lang-dropdown__option" data-lang="en" role="option" aria-selected="false">
+                <span class="lang-dropdown__option-code">EN</span>
+                <span data-i18n="lang.en">English</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <a href="#contact" class="cursor-hover btn-nav-primary site-header__cta" data-contact-open data-i18n="nav.book">Beratung buchen</a>
         <button
           type="button"
           class="site-nav-toggle"
           id="site-nav-toggle"
           aria-expanded="false"
           aria-controls="site-nav"
-          aria-label="Open menu"
+          aria-label="Menü öffnen"
         >
           <span class="site-nav-toggle__bars" aria-hidden="true"></span>
         </button>
       </div>
     </div>
-    <div class="site-nav-backdrop" id="site-nav-backdrop" hidden aria-hidden="true"></div>
   </header>
+  <div class="site-nav-backdrop" id="site-nav-backdrop" hidden aria-hidden="true"></div>
 
   <main class="site-shell">
     <div id="custom-cursor-glow" class="custom-cursor-glow is-active" aria-hidden="true">
@@ -63,11 +93,11 @@
       <div class="page-container">
         <div class="hero__layout">
           <div class="hero__copy">
-            <h1 class="text-h1">Social Media Manager Helping Businesses Grow.</h1>
+            <h1 class="text-h1" data-i18n="hero.title">Social Media Manager für nachhaltiges Unternehmenswachstum.</h1>
             <div class="hero__body text-body">
-              <p>I work as a Social Media Manager and YouTube SEO specialist helping businesses and creators grow their online presence. My work focuses on building structured content strategies that increase visibility and create sustainable audience growth. With experience managing multiple digital channels and publishing more than 1,200 videos, I combine strategy, analytics and execution to build online platforms that generate long term reach.</p>
+              <p data-i18n="hero.body">Als Social Media Manager und YouTube-SEO-Spezialist unterstütze ich Unternehmen und Creator beim Aufbau ihrer Online-Präsenz. Mein Fokus liegt auf strukturierten Content-Strategien, die Sichtbarkeit erhöhen und nachhaltiges Publikumswachstum schaffen. Mit Erfahrung in der Verwaltung mehrerer digitaler Kanäle und über 1.200 veröffentlichten Videos verbinde ich Strategie, Analyse und Umsetzung, um Plattformen mit langfristiger Reichweite aufzubauen.</p>
             </div>
-            <a href="#cases" class="cursor-hover btn-hero-outline">VIEW CASE STUDIES</a>
+            <a href="#cases" class="cursor-hover btn-hero-outline" data-i18n="hero.cta">CASE STUDIES ANSEHEN</a>
           </div>
           <div class="hero__contact">
             <div class="contact-badge">
@@ -76,7 +106,7 @@
           </div>
         </div>
         <div class="hero__image-wrap">
-          <img src="assets/hero-cover.png" alt="Kevin portrait" />
+          <img src="assets/hero-cover.png" alt="Kevin Porträt" data-i18n-alt="hero.portrait" />
         </div>
       </div>
     </section>
@@ -85,8 +115,8 @@
     <section id="services" class="gradient-bg">
       <div class="page-container section-pad">
         <div class="section-head">
-          <h2 class="text-section-title section-head__title">Core Expertise</h2>
-          <p class="text-body section-head__copy">Whether you want to grow your online presence, automate operations, or plan an unforgettable trip, I provide structured solutions tailored to your goals.</p>
+          <h2 class="text-section-title section-head__title" data-i18n="services.title">Kernkompetenzen</h2>
+          <p class="text-body section-head__copy" data-i18n="services.copy">Ob Online-Präsenz, automatisierte Abläufe oder Reiseplanung — ich biete strukturierte Lösungen, die auf Ihre Ziele zugeschnitten sind.</p>
         </div>
 
         <div class="stack-cards" data-sticky-stack>
@@ -97,17 +127,17 @@
               </div>
               <div class="card-row__body">
                 <div class="card-row__intro">
-                  <h3 class="text-section-title">Strategic Social Media Growth</h3>
-                  <p class="text-body">A strong social media presence is essential for modern businesses. I help companies and creators build structured content strategies that increase visibility, strengthen brand authority and attract long term audiences. Through data driven strategies and consistent content management, social media channels can become powerful tools for customer acquisition and brand growth. Our Services Include</p>
+                  <h3 class="text-section-title" data-i18n="s1.title">Strategisches Social-Media-Wachstum</h3>
+                  <p class="text-body" data-i18n="s1.intro">Eine starke Social-Media-Präsenz ist für moderne Unternehmen unverzichtbar. Ich helfe Unternehmen und Creatorn, strukturierte Content-Strategien aufzubauen, die Sichtbarkeit erhöhen, Markenautorität stärken und langfristige Zielgruppen gewinnen. Durch datenbasierte Strategien und konsequentes Content-Management werden Social-Media-Kanäle zu wirksamen Werkzeugen für Kundengewinnung und Markenwachstum. Unsere Leistungen umfassen</p>
                 </div>
                 <ul class="bullet-list text-body">
-                  <li><span class="bullet-square"></span><span>Social media strategy development</span></li>
-                  <li><span class="bullet-square"></span><span>Content planning and editorial calendars</span></li>
-                  <li><span class="bullet-square"></span><span>Account management and optimization</span></li>
-                  <li><span class="bullet-square"></span><span>Audience growth and engagement strategies</span></li>
-                  <li><span class="bullet-square"></span><span>Analytics and performance tracking</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s1.l1">Entwicklung von Social-Media-Strategien</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s1.l2">Content-Planung und Redaktionskalender</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s1.l3">Account-Management und Optimierung</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s1.l4">Strategien für Reichweite und Engagement</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s1.l5">Analytics und Performance-Tracking</span></li>
                 </ul>
-                <p class="text-body"><span style="font-weight:600">Goal:</span> Turning social media platforms into reliable growth channels that continuously generate attention and engagement.</p>
+                <p class="text-body"><strong data-i18n="goal.label">Ziel:</strong> <span data-i18n="s1.goal">Social-Media-Plattformen zu verlässlichen Wachstumskanälen zu machen, die kontinuierlich Aufmerksamkeit und Engagement erzeugen.</span></p>
               </div>
             </article>
           </div>
@@ -119,17 +149,17 @@
               </div>
               <div class="card-row__body">
                 <div class="card-row__intro">
-                  <h3 class="text-section-title">YouTube SEO and Channel Growth Strategy</h3>
-                  <p class="text-body">YouTube is one of the most powerful platforms for long term discoverability. With the right SEO strategy, videos can generate traffic and visibility for years. I help businesses and creators optimize their YouTube channels so their content reaches the right audience and continues to grow over time. Our Services Include</p>
+                  <h3 class="text-section-title" data-i18n="s2.title">YouTube-SEO und Kanalwachstum</h3>
+                  <p class="text-body" data-i18n="s2.intro">YouTube ist eine der stärksten Plattformen für langfristige Auffindbarkeit. Mit der richtigen SEO-Strategie können Videos über Jahre hinweg Traffic und Sichtbarkeit generieren. Ich helfe Unternehmen und Creatorn, ihre YouTube-Kanäle so zu optimieren, dass Inhalte die richtige Zielgruppe erreichen und langfristig wachsen. Unsere Leistungen umfassen</p>
                 </div>
                 <ul class="bullet-list text-body">
-                  <li><span class="bullet-square"></span><span>YouTube channel audits and optimization</span></li>
-                  <li><span class="bullet-square"></span><span>Video SEO and ranking strategy</span></li>
-                  <li><span class="bullet-square"></span><span>Title, description and metadata optimization</span></li>
-                  <li><span class="bullet-square"></span><span>Thumbnail strategy and click through optimization</span></li>
-                  <li><span class="bullet-square"></span><span>Content strategy for long term discoverability</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s2.l1">YouTube-Kanal-Audits und Optimierung</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s2.l2">Video-SEO und Ranking-Strategie</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s2.l3">Optimierung von Titeln, Beschreibungen und Metadaten</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s2.l4">Thumbnail-Strategie und Klickraten-Optimierung</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s2.l5">Content-Strategie für langfristige Auffindbarkeit</span></li>
                 </ul>
-                <p class="text-body"><span style="font-weight:600">Goal:</span> Building YouTube channels that generate consistent traffic and permanent reach.</p>
+                <p class="text-body"><strong data-i18n="goal.label">Ziel:</strong> <span data-i18n="s2.goal">YouTube-Kanäle aufzubauen, die konstant Traffic und dauerhafte Reichweite erzeugen.</span></p>
               </div>
             </article>
           </div>
@@ -141,16 +171,16 @@
               </div>
               <div class="card-row__body">
                 <div class="card-row__intro">
-                  <h3 class="text-section-title">Tenerife Travel and Accommodation Support</h3>
-                  <p class="text-body">Alongside digital services, I also help travelers organize their stay in Tenerife. Planning a trip can be complex, especially when arranging flights, accommodation and activities. I assist travelers in organizing their trip so they can enjoy a smooth and stress free experience.</p>
+                  <h3 class="text-section-title" data-i18n="s3.title">Teneriffa Reise- und Unterstützung</h3>
+                  <p class="text-body" data-i18n="s3.intro">Neben digitalen Services unterstütze ich Reisende auch bei der Organisation ihres Aufenthalts auf Teneriffa. Die Planung kann komplex sein — besonders bei Flügen, Unterkünften und Aktivitäten. Ich helfe dabei, Reisen strukturiert zu organisieren, damit der Aufenthalt entspannt und reibungslos verläuft.</p>
                 </div>
                 <ul class="bullet-list text-body">
-                  <li><span class="bullet-square"></span><span>Accommodation recommendations and booking support</span></li>
-                  <li><span class="bullet-square"></span><span>Flight research and travel planning</span></li>
-                  <li><span class="bullet-square"></span><span>Trip organization and scheduling</span></li>
-                  <li><span class="bullet-square"></span><span>Local advice for exploring Tenerife</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s3.l1">Unterkunftsempfehlungen und Buchungsunterstützung</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s3.l2">Flugrecherche und Reiseplanung</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s3.l3">Organisation und Zeitplanung der Reise</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="s3.l4">Lokale Tipps für Teneriffa</span></li>
                 </ul>
-                <p class="text-body"><span style="font-weight:600">Goal:</span> Helping travelers experience Tenerife with professional support from planning to arrival.</p>
+                <p class="text-body"><strong data-i18n="goal.label">Ziel:</strong> <span data-i18n="s3.goal">Reisenden zu helfen, Teneriffa mit professioneller Unterstützung von der Planung bis zur Ankunft zu erleben.</span></p>
               </div>
             </article>
           </div>
@@ -173,7 +203,7 @@
         <div class="stats-quote-wrap">
           <div class="stats-quote">
             <img src="assets/Everyprojectfocuses-speechmark.svg" alt="" />
-            <p class="text-quote scroll-quote-reveal" data-scroll-quote>Every project focuses on measurable results such as increased visibility, stronger audience engagement and long term digital reach.</p>
+            <p class="text-quote scroll-quote-reveal" data-scroll-quote data-i18n="stats.quote">Jedes Projekt fokussiert messbare Ergebnisse wie mehr Sichtbarkeit, stärkeres Engagement und langfristige digitale Reichweite.</p>
           </div>
         </div>
 
@@ -182,35 +212,35 @@
             <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
               <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
-              <p class="text-kpi-label">Social Media Reach</p>
+              <p class="text-kpi-label" data-i18n="kpi.reach">Social-Media-Reichweite</p>
             </div>
           </li>
           <li class="kpi-item" data-kpi data-value="1.1" data-unit="M" data-suffix="+" data-fill="100">
             <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
               <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
-              <p class="text-kpi-label">TikTok Views Generated</p>
+              <p class="text-kpi-label" data-i18n="kpi.tiktok">Generierte TikTok-Views</p>
             </div>
           </li>
           <li class="kpi-item" data-kpi data-value="1200" data-unit="" data-suffix="+" data-fill="76">
             <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
               <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
-              <p class="text-kpi-label">YouTube Videos Managed</p>
+              <p class="text-kpi-label" data-i18n="kpi.youtube">Verwaltete YouTube-Videos</p>
             </div>
           </li>
           <li class="kpi-item" data-kpi data-value="1500" data-unit="" data-suffix="+" data-fill="82">
             <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
               <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
-              <p class="text-kpi-label">Monetized Digital Channels</p>
+              <p class="text-kpi-label" data-i18n="kpi.monetized">Monetarisierte digitale Kanäle</p>
             </div>
           </li>
           <li class="kpi-item" data-kpi data-value="1200" data-unit="" data-suffix="+" data-fill="71">
             <div class="text-kpi-number kpi-item__number"><span class="kpi-item__value"></span></div>
             <div class="kpi-item__detail">
               <div class="kpi-progress-row"><span class="kpi-progress-row__fill"></span></div>
-              <p class="text-kpi-label">Consistent Audience Growth</p>
+              <p class="text-kpi-label" data-i18n="kpi.growth">Konstantes Publikumswachstum</p>
             </div>
           </li>
         </ul>
@@ -221,8 +251,8 @@
     <section id="cases" class="gradient-bg">
       <div class="page-container" style="padding-top:5rem;padding-bottom:3rem">
         <div class="section-head">
-          <h2 class="text-section-title section-head__title">Case Studies</h2>
-          <p class="text-body section-head__copy">Whether you want to grow your online presence, automate operations, or plan an unforgettable trip, I provide structured solutions tailored to your goals.</p>
+          <h2 class="text-section-title section-head__title" data-i18n="cases.title">Case Studies</h2>
+          <p class="text-body section-head__copy" data-i18n="cases.copy">Ob Online-Präsenz, automatisierte Abläufe oder Reiseplanung — ich biete strukturierte Lösungen, die auf Ihre Ziele zugeschnitten sind.</p>
         </div>
 
         <div class="stack-cards" data-sticky-stack>
@@ -234,7 +264,8 @@
                 data-video-open
                 data-video-id="1FeUNJCuHCbXMBTuGNdkEiXBDnWsTh9eC"
                 data-video-title="Laserland Project"
-                aria-label="Play Laserland video"
+                aria-label="Laserland Video abspielen"
+                data-i18n-aria="case1.video"
               >
                 <img src="assets/video%20cover%201.png" alt="" />
                 <div class="play-overlay">
@@ -243,15 +274,15 @@
               </button>
               <div class="card-row__body">
                 <div class="card-row__intro">
-                  <h3 class="text-section-title">Laserland Project</h3>
-                  <p class="text-body">Laserland is an entertainment venue where social media plays a key role in attracting visitors and promoting events. The goal of this project was to increase online visibility and drive engagement through short form video content and community focused marketing. By implementing a structured posting schedule, creating platform optimized content, and highlighting event moments and tournaments, the social channels were able to reach a larger audience and build an active digital community.</p>
+                  <h3 class="text-section-title" data-i18n="case1.title">Laserland Projekt</h3>
+                  <p class="text-body" data-i18n="case1.body">Laserland ist eine Entertainment-Location, bei der Social Media eine zentrale Rolle spielt, um Besucher anzuziehen und Events zu bewerben. Ziel des Projekts war es, die Online-Sichtbarkeit zu erhöhen und Engagement durch Short-Form-Videos und Community-Marketing zu steigern. Mit einem strukturierten Posting-Plan, plattformoptimiertem Content und Highlights von Events und Turnieren erreichten die Kanäle ein größeres Publikum und eine aktive Community.</p>
                 </div>
                 <ul class="bullet-list text-body">
-                  <li><span class="bullet-square"></span><span>Short form video strategy for social platforms</span></li>
-                  <li><span class="bullet-square"></span><span>Event based content marketing</span></li>
-                  <li><span class="bullet-square"></span><span>Structured and consistent posting schedule</span></li>
-                  <li><span class="bullet-square"></span><span>Audience growth and engagement strategies</span></li>
-                  <li><span class="bullet-square"></span><span>Active community interaction and engagement</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case1.l1">Short-Form-Video-Strategie für Social Plattformen</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case1.l2">Event-basiertes Content-Marketing</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case1.l3">Strukturierter und konsequenter Posting-Plan</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case1.l4">Strategien für Reichweite und Engagement</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case1.l5">Aktive Community-Interaktion</span></li>
                 </ul>
               </div>
             </article>
@@ -265,7 +296,8 @@
                 data-video-open
                 data-video-id="1n9mOmSyxir3OXVjBTMqa1w4Cr8xj3TD2"
                 data-video-title="Gradtsummt Project"
-                aria-label="Play Gradtsummt video"
+                aria-label="Gradtsummt Video abspielen"
+                data-i18n-aria="case2.video"
               >
                 <img src="assets/video%20cover%202.png" alt="" />
                 <div class="play-overlay">
@@ -274,14 +306,14 @@
               </button>
               <div class="card-row__body">
                 <div class="card-row__intro">
-                  <h3 class="text-section-title">Gradtsummt Project</h3>
-                  <p class="text-body">Gradtsummt is a project focused on promoting sustainable beekeeping and environmental awareness through social media content. The strategy aimed to educate audiences while building a community interested in sustainability and nature. Through storytelling based content and consistent posting, the channel successfully attracted viewers who were interested in learning about bees, nature, and responsible environmental practices.</p>
+                  <h3 class="text-section-title" data-i18n="case2.title">Gradtsummt Projekt</h3>
+                  <p class="text-body" data-i18n="case2.body">Gradtsummt ist ein Projekt zur Förderung nachhaltiger Imkerei und Umweltbewusstsein durch Social-Media-Content. Die Strategie sollte informieren und gleichzeitig eine Community für Nachhaltigkeit und Natur aufbauen. Durch Storytelling-Content und konsequentes Posting gewann der Kanal Zuschauer, die sich für Bienen, Natur und verantwortungsvolle Umweltpraxis interessieren.</p>
                 </div>
                 <ul class="bullet-list text-body">
-                  <li><span class="bullet-square"></span><span>Educational storytelling content strategy</span></li>
-                  <li><span class="bullet-square"></span><span>Community focused audience building</span></li>
-                  <li><span class="bullet-square"></span><span>Consistent short form video posting</span></li>
-                  <li><span class="bullet-square"></span><span>Engagement around sustainability and nature topics</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case2.l1">Storytelling-Strategie für Bildungscontent</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case2.l2">Community-orientierter Audience-Aufbau</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case2.l3">Konsequentes Short-Form-Video-Posting</span></li>
+                  <li><span class="bullet-square"></span><span data-i18n="case2.l4">Engagement zu Nachhaltigkeit und Natur</span></li>
                 </ul>
               </div>
             </article>
@@ -300,11 +332,11 @@
 
         <div id="contact" class="page-container cta-block">
           <div class="cta-block__copy">
-            <h2 class="text-section-title">Let's Grow Your Digital Presence Together!</h2>
-            <p class="text-body-lg">Whether you want to grow your social media channels, build a YouTube strategy for long term reach or plan your stay in Tenerife, I can help you create structured and effective solutions.</p>
+            <h2 class="text-section-title" data-i18n="cta.title">Lassen Sie uns Ihre digitale Präsenz gemeinsam ausbauen!</h2>
+            <p class="text-body-lg" data-i18n="cta.copy">Ob Social-Media-Kanäle, YouTube-Strategie für langfristige Reichweite oder Ihr Aufenthalt auf Teneriffa — ich helfe Ihnen mit strukturierten und wirksamen Lösungen.</p>
           </div>
           <a href="#contact" class="cursor-hover btn-cta-primary" data-contact-open>
-            <span>Schedule a Consultation</span>
+            <span data-i18n="cta.btn">Beratung vereinbaren</span>
             <span class="btn-cta-primary__icon">
               <img src="assets/schedule-a-consultation-forward-arrow.svg" alt="" />
             </span>
@@ -320,7 +352,7 @@
           <div class="footer__brand">
             <img src="assets/footer%20logo.svg" alt="Kevin Digital" class="footer__logo" />
             <div class="footer__about">
-              <p class="font-footer">Helping businesses and creators grow through social media management and YouTube SEO strategies.</p>
+              <p class="font-footer" data-i18n="footer.blurb">Ich helfe Unternehmen und Creatorn beim Wachstum durch Social-Media-Management und YouTube-SEO-Strategien.</p>
               <div class="footer__social">
                 <a href="#" aria-label="Facebook" class="cursor-hover"><img src="assets/Facebook.svg" alt="" /></a>
                 <a href="#" aria-label="Instagram" class="cursor-hover"><img src="assets/Instagram.svg" alt="" /></a>
@@ -330,23 +362,23 @@
             </div>
           </div>
           <div class="font-footer footer__links">
-            <div class="footer__links-title">QUICK LINKS</div>
+            <div class="footer__links-title" data-i18n="footer.links">SCHNELLZUGRIFF</div>
             <div class="footer__links-row">
-              <a href="#" class="cursor-hover">HOME</a>
+              <a href="#" class="cursor-hover" data-i18n="footer.home">START</a>
               <span class="footer__sep">|</span>
-              <a href="#about" class="cursor-hover">ABOUT</a>
+              <a href="#about" class="cursor-hover" data-i18n="footer.about">ÜBER MICH</a>
               <span class="footer__sep">|</span>
-              <a href="#services" class="cursor-hover">SERVICES</a>
+              <a href="#services" class="cursor-hover" data-i18n="footer.services">LEISTUNGEN</a>
             </div>
             <div class="footer__links-row">
-              <a href="#cases" class="cursor-hover">CASE STUDIES</a>
+              <a href="#cases" class="cursor-hover" data-i18n="footer.cases">CASE STUDIES</a>
               <span class="footer__sep">|</span>
-              <a href="#contact" class="cursor-hover">CONTACT</a>
+              <a href="#contact" class="cursor-hover" data-i18n="footer.contact">KONTAKT</a>
             </div>
           </div>
         </div>
         <div class="footer__bottom font-footer">
-          © 2026 Kevin Digital.de. All rights reserved.
+          <span data-i18n="footer.rights">© 2026 Kevin Digital.de. Alle Rechte vorbehalten.</span>
         </div>
       </div>
     </footer>
@@ -362,8 +394,8 @@
     >
       <form id="contact-form" class="contact-form" novalidate>
         <div class="contact-form__head">
-          <h2 id="contact-modal-title" class="contact-form__title">Start Your Journey With Me</h2>
-          <p class="contact-form__subtitle">Fill in the form and let&rsquo;s get started.</p>
+          <h2 id="contact-modal-title" class="contact-form__title" data-i18n="form.title">Starten Sie Ihre Reise mit mir</h2>
+          <p class="contact-form__subtitle" data-i18n="form.subtitle">Füllen Sie das Formular aus und legen wir los.</p>
         </div>
         <div class="contact-form__fields">
           <div class="contact-form__field">
@@ -372,6 +404,7 @@
               type="text"
               name="name"
               placeholder="Name"
+              data-i18n-placeholder="form.name"
               autocomplete="name"
               required
             />
@@ -381,7 +414,8 @@
               class="contact-form__input"
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="E-Mail"
+              data-i18n-placeholder="form.email"
               autocomplete="email"
               required
             />
@@ -391,7 +425,8 @@
               class="contact-form__input"
               type="tel"
               name="phone"
-              placeholder="Phone Number"
+              placeholder="Telefonnummer"
+              data-i18n-placeholder="form.phone"
               autocomplete="tel"
             />
           </div>
@@ -399,12 +434,13 @@
             <textarea
               class="contact-form__textarea"
               name="message"
-              placeholder="Message"
+              placeholder="Nachricht"
+              data-i18n-placeholder="form.message"
               rows="4"
               required
             ></textarea>
           </div>
-          <button type="submit" class="contact-form__submit">Schedule a Call</button>
+          <button type="submit" class="contact-form__submit" data-i18n="form.submit">Gespräch vereinbaren</button>
         </div>
         <div class="contact-form__success" aria-live="polite">
           <div class="contact-form__success-icon" aria-hidden="true">
@@ -412,8 +448,8 @@
               <path d="M9 18.5L15 24.5L27 12.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="contact-form__success-title">Successfully submitted</p>
-          <p class="contact-form__success-text">Thank you! We&rsquo;ll get back to you shortly.</p>
+          <p class="contact-form__success-title" data-i18n="form.successTitle">Erfolgreich gesendet</p>
+          <p class="contact-form__success-text" data-i18n="form.successText">Vielen Dank! Wir melden uns in Kürze bei Ihnen.</p>
         </div>
       </form>
     </div>
@@ -424,7 +460,7 @@
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
       <div class="video-modal__header">
         <h2 id="video-modal-title" class="video-modal__title"></h2>
-        <button type="button" class="video-modal__close cursor-hover" data-video-close aria-label="Close video">&times;</button>
+        <button type="button" class="video-modal__close cursor-hover" data-video-close aria-label="Video schließen" data-i18n-aria="a11y.closeVideo">&times;</button>
       </div>
       <div class="video-modal__frame-wrap">
         <iframe id="video-modal-iframe" title="Case study video" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -457,6 +493,7 @@
     <span class="custom-cursor-pointer__dot"></span>
   </div>
 
+  <script src="js/i18n.js"></script>
   <script src="js/splash.js"></script>
   <script src="js/sticky-header.js"></script>
   <script src="js/mobile-nav.js"></script>

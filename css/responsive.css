@@ -102,6 +102,12 @@
     flex-wrap: nowrap;
   }
 
+  .lang-dropdown__trigger {
+    height: 2rem;
+    padding: 0 0.5rem 0 0.6rem;
+    font-size: 12px;
+  }
+
   .site-header__cta.btn-nav-primary {
     padding: 6px 12px;
     font-size: 13px;
@@ -341,9 +347,7 @@
     height: 100vh;
     margin: 0;
     padding: calc(var(--site-header-height, 4.5rem) + 1.5rem) 1.5rem 2rem;
-    background: rgba(255, 255, 255, 0.97);
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
+    background: #fff;
     box-shadow: -12px 0 48px rgba(15, 23, 42, 0.12);
     transform: translate3d(105%, 0, 0);
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
@@ -382,7 +386,7 @@
     position: fixed;
     inset: 0;
     z-index: 340;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(243, 240, 255, 0.45);
     opacity: 0;
     visibility: hidden;
     transition:
