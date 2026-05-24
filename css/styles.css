@@ -738,7 +738,18 @@ body.video-modal-open {
 }
 
 /* Scroll-to-read quote (character by character, gray → black) */
+.scroll-quote-reveal {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.scroll-quote-reveal__word {
+  display: inline;
+  white-space: normal;
+}
+
 .scroll-quote-reveal__char {
+  display: inline;
   color: rgba(0, 0, 0, 0.22);
 }
 
