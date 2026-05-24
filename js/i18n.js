@@ -19,7 +19,7 @@
       "nav.services": "LEISTUNGEN",
       "nav.cases": "CASE STUDIES",
       "nav.book": "Beratung buchen",
-      "hero.title": "Social Media Manager für nachhaltiges Unternehmenswachstum.",
+      "hero.title": "Social Media Manager hilft Unternehmen beim Wachstum.",
       "hero.body":
         "Als Social Media Manager und YouTube-SEO-Spezialist unterstütze ich Unternehmen und Creator beim Aufbau ihrer Online-Präsenz. Mein Fokus liegt auf strukturierten Content-Strategien, die Sichtbarkeit erhöhen und nachhaltiges Publikumswachstum schaffen. Mit Erfahrung in der Verwaltung mehrerer digitaler Kanäle und über 1.200 veröffentlichten Videos verbinde ich Strategie, Analyse und Umsetzung, um Plattformen mit langfristiger Reichweite aufzubauen.",
       "hero.cta": "CASE STUDIES ANSEHEN",
