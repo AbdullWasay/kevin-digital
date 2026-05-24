@@ -295,6 +295,13 @@ ul {
   gap: calc(2rem - var(--nav-p) * 0.35rem);
   margin-left: auto;
   flex-shrink: 0;
+}
+
+.site-header__tools {
+  display: flex;
+  align-items: center;
+  gap: calc(2rem - var(--nav-p) * 0.35rem);
+  flex-shrink: 0;
   transform: translateX(calc(var(--nav-p) * 6px));
 }
 
@@ -407,6 +414,9 @@ ul {
     display: flex;
   }
   .site-header__actions {
+    gap: 2.5rem;
+  }
+  .site-header__tools {
     gap: 2.5rem;
   }
 }
