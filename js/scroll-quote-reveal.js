@@ -4,38 +4,14 @@
 
   var charEls = [];
   var lastBuiltText = "";
-  var originalText = (el.textContent || "").replace(/\s+/g, " ").trim();
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var rebuildTimer;
-  var translateRetries = 0;
   var splitEnabled = false;
 
-  function isPageTranslated() {
-    var root = document.documentElement;
-    return root.classList.contains("translated-ltr") || root.classList.contains("translated-rtl");
-  }
-
-  function extractText() {
-    return (el.innerText || el.textContent || "")
-      .replace(/\u00a0/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
-  function isGarbled(text) {
-    if (!text || text.length < 10) return true;
-    var tokens = text.split(/\s+/);
-    if (tokens.length < 12) return false;
-    var singles = tokens.filter(function (token) {
-      return token.length === 1;
-    }).length;
-    return singles / tokens.length > 0.55;
-  }
-
-  function flattenQuote() {
-    charEls = [];
-    lastBuiltText = "";
-    el.textContent = originalText;
+  function getText() {
+    if (window.KDi18n && el.getAttribute("data-i18n")) {
+      return window.KDi18n.t(el.getAttribute("data-i18n"));
+    }
+    return (el.textContent || "").replace(/\s+/g, " ").trim();
   }
 
   function appendChar(parent, ch) {
@@ -69,8 +45,16 @@
     });
   }
 
-  function shouldSplit() {
-    return splitEnabled || isElementNearView();
+  function buildChars() {
+    if (!splitEnabled && !isElementNearView()) return;
+
+    var text = getText();
+    if (!text || (text === lastBuiltText && charEls.length > 0)) return;
+
+    lastBuiltText = text;
+    el.setAttribute("aria-label", text);
+    renderChars(text);
+    update();
   }
 
   function isElementNearView() {
@@ -79,66 +63,9 @@
     return rect.top < vh * 1.15 && rect.bottom > -vh * 0.15;
   }
 
-  function buildChars() {
-    if (!shouldSplit()) return;
-
-    var text = extractText() || originalText;
-
-    if (isPageTranslated() && text === originalText) {
-      if (translateRetries < 8) {
-        translateRetries += 1;
-        scheduleRebuild(300 + translateRetries * 200);
-        return;
-      }
-    }
-
-    if (isGarbled(text)) {
-      if (translateRetries < 8) {
-        translateRetries += 1;
-        scheduleRebuild(300 + translateRetries * 200);
-        return;
-      }
-      flattenQuote();
-      text = originalText;
-    }
-
-    translateRetries = 0;
-    if (text === lastBuiltText && charEls.length > 0) return;
-
-    lastBuiltText = text;
-    el.setAttribute("aria-label", text);
-    renderChars(text);
-    update();
-  }
-
-  function scheduleRebuild(delay) {
-    clearTimeout(rebuildTimer);
-    rebuildTimer = window.setTimeout(buildChars, delay || 0);
-  }
-
-  function onTranslateChange() {
-    translateRetries = 0;
-    lastBuiltText = "";
-
-    if (el.querySelector(".scroll-quote-reveal__char")) {
-      flattenQuote();
-    } else if (!isPageTranslated()) {
-      el.textContent = originalText;
-    }
-
-    if (isPageTranslated()) {
-      scheduleRebuild(700);
-      return;
-    }
-
-    if (shouldSplit()) {
-      scheduleRebuild(0);
-    }
-  }
-
   function update() {
     if (charEls.length === 0) {
-      if (shouldSplit()) buildChars();
+      if (splitEnabled || isElementNearView()) buildChars();
       return;
     }
 
@@ -168,12 +95,6 @@
     });
   }
 
-  var htmlObserver = new MutationObserver(onTranslateChange);
-  htmlObserver.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["class"],
-  });
-
   var viewObserver = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
@@ -190,4 +111,10 @@
 
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
+
+  window.addEventListener("kd:language-change", function () {
+    lastBuiltText = "";
+    buildChars();
+    update();
+  });
 })();

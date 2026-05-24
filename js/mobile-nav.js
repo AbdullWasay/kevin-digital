@@ -13,7 +13,14 @@
   function setOpen(open) {
     document.body.classList.toggle("nav-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    if (window.KDi18n) {
+      toggle.setAttribute(
+        "aria-label",
+        window.KDi18n.t(open ? "a11y.menuClose" : "a11y.menuOpen")
+      );
+    } else {
+      toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    }
     if (backdrop) {
       backdrop.hidden = !open;
       backdrop.setAttribute("aria-hidden", open ? "false" : "true");
