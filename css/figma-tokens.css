@@ -12,6 +12,8 @@
   --figma-content-max: 1280px;
   /* (1440 - 1280) / 2 — side gutters on the 1440 artboard */
   --figma-side-margin: calc((var(--figma-page-width) - var(--figma-content-max)) / 2);
+  /* Horizontal gutter — shared by page sections and header */
+  --page-gutter: 1rem;
 
   /* Brand colors */
   --figma-blue: #0b7bc5;

@@ -188,16 +188,9 @@ ul {
   color: var(--figma-white);
 }
 
-.page-container {
-  width: 100%;
-  max-width: var(--figma-page-width);
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-
 @media (min-width: 768px) {
-  .page-container {
-    padding-inline: max(
+  :root {
+    --page-gutter: max(
       1rem,
       calc((min(100%, var(--figma-page-width)) - var(--figma-content-max)) / 2)
     );
@@ -205,9 +198,16 @@ ul {
 }
 
 @media (min-width: 1440px) {
-  .page-container {
-    padding-inline: var(--figma-side-margin);
+  :root {
+    --page-gutter: var(--figma-side-margin);
   }
+}
+
+.page-container {
+  width: 100%;
+  max-width: var(--figma-page-width);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
 }
 
 .logo-header {
@@ -247,10 +247,10 @@ ul {
   justify-content: space-between;
   gap: calc(1.5rem - var(--nav-p) * 0.25rem);
   width: calc(100% - var(--nav-p) * 16%);
-  max-width: calc(1440px - var(--nav-p) * 380px);
+  max-width: calc(var(--figma-page-width) - var(--nav-p) * 380px);
   margin-inline: auto;
   padding-block: calc(1.25rem - var(--nav-p) * 0.5rem);
-  padding-inline: calc(1rem + var(--nav-p) * 0.85rem);
+  padding-inline: calc(var(--page-gutter) + var(--nav-p) * 0.85rem);
   border-radius: calc(var(--nav-p) * 100vmax);
   background: rgba(255, 255, 255, calc(var(--nav-p) * 0.58));
   -webkit-backdrop-filter: blur(calc(var(--nav-p) * 20px))
@@ -270,17 +270,9 @@ ul {
 
   .site-header__inner {
     width: calc(100% - var(--nav-p) * 18%);
-    max-width: calc(1440px - var(--nav-p) * 420px);
-    padding-inline: calc(
-      max(1rem, (min(100%, 1440px) - 1152px) / 2) + var(--nav-p) * 1rem
-    );
+    max-width: calc(var(--figma-page-width) - var(--nav-p) * 420px);
+    padding-inline: calc(var(--page-gutter) + var(--nav-p) * 1rem);
     padding-block: calc(1.25rem - var(--nav-p) * 0.45rem);
-  }
-}
-
-@media (min-width: 1440px) {
-  .site-header__inner {
-    padding-inline: calc(144px - var(--nav-p) * 108px);
   }
 }
 
