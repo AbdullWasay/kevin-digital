@@ -1,0 +1,229 @@
+Privacy Policy
+1. Data protection at a glance
+General information
+The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you. Detailed information on data protection can be found in our privacy policy, which is linked below.
+
+Data collection on this website
+Who is responsible for data collection on this website?
+Data processing on this website is carried out by the website operator. Their contact details can be found in the section "Information on the responsible body" in this privacy policy.
+
+How do we collect your data?
+Your data is collected, firstly, because you provide it to us. This could include, for example, data that you enter into a contact form.
+
+Other data is collected automatically or with your consent by our IT systems when you visit the website. This is primarily technical data (e.g., internet browser, operating system, or time of page access). This data is collected automatically as soon as you access this website.
+
+What do we use your data for?
+Some data is collected to ensure the website functions correctly. Other data may be used to analyze your user behavior.
+
+What rights do you have regarding your data?
+You have the right to obtain information free of charge at any time regarding the origin, recipients, and purpose of your stored personal data. You also have the right to request the correction or deletion of this data. If you have given your consent to data processing, you can revoke this consent at any time for the future. Furthermore, you have the right, under certain circumstances, to request the restriction of the processing of your personal data. You also have the right to lodge a complaint with the competent supervisory authority.
+
+You can contact us at any time with regard to this and other questions concerning data protection.
+
+Analytics tools and third-party tools
+When you visit this website, your browsing behavior may be statistically analyzed. This is done primarily using so-called analytics programs.
+
+Detailed information about these analytics programs can be found in the following privacy policy.
+
+2. Hosting
+External hosting
+This website is hosted by an external service provider (host). The personal data collected on this website is stored on the host's servers. This may include, in particular, IP addresses, contact requests, metadata and communication data, contract data, contact information, names, website access data, and other data generated via a website.
+
+The use of the hosting provider is for the purpose of fulfilling our contractual obligations to our potential and existing customers (Art. 6 para. 1 lit. b GDPR) and in the interest of a secure, fast, and efficient provision of our online services by a professional provider (Art. 6 para. 1 lit. f GDPR). If corresponding consent has been requested, processing is carried out exclusively on the basis of Art. 6 para. 1 lit. a GDPR and Section 25 para. 1 of the German Telecommunications and Telemedia Data Protection Act (TTDSG), insofar as the consent includes the storage of cookies or access to information on the user's device (e.g., device fingerprinting) within the meaning of the TTDSG. Consent can be revoked at any time.
+
+Our hosting provider will only process your data to the extent necessary to fulfill its contractual obligations and will follow our instructions regarding this data.
+
+We use the following hosting provider:
+
+PS-WebAgentur
+Philipp Sobotta
+Grillparzerplatz 7
+01157 Dresden
+Germany
+
+Order processing
+We have concluded a data processing agreement (DPA) with the aforementioned provider. This is a legally required contract under data protection law, which ensures that the provider processes the personal data of our website visitors only according to our instructions and in compliance with the GDPR.
+
+3. General information and mandatory disclosures
+Data protection
+The operators of this website take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy.
+
+When you use this website, various personal data are collected. Personal data is data that can be used to identify you personally. This privacy policy explains what data we collect and what we use it for. It also explains how and for what purpose this is done.
+
+Please note that data transmission over the internet (e.g., when communicating via email) can have security vulnerabilities. Complete protection of data against access by third parties is not possible.
+
+Note regarding the responsible body
+The responsible body for data processing on this website is:
+
+Kevin Weniger
+KevinDigital
+
+Telephone: +49 1523 3933 529
+Email: mail@kevindigital.de
+
+The responsible entity is the natural or legal person who, alone or jointly with others, decides on the purposes and means of processing personal data (e.g. names, email addresses, etc.).
+
+Storage duration
+Unless a more specific retention period is stated within this privacy policy, your personal data will remain with us until the purpose for processing the data no longer applies. If you submit a legitimate request for erasure or withdraw your consent to data processing, your data will be deleted, provided we have no other legally permissible grounds for storing your personal data (e.g., tax or commercial law retention periods); in the latter case, the data will be deleted once these grounds cease to apply.
+
+General information on the legal basis for data processing on this website
+If you have consented to data processing, we process your personal data on the basis of Article 6(1)(a) GDPR or Article 9(2)(a) GDPR if special categories of data pursuant to Article 9(1) GDPR are processed. In the case of explicit consent to the transfer of personal data to third countries, data processing also takes place on the basis of Article 49(1)(a) GDPR. If you have consented to the storage of cookies or to access to information on your device (e.g., via device fingerprinting), data processing additionally takes place on the basis of Section 25(1) of the German Telecommunications and Telemedia Data Protection Act (TTDSG). You can withdraw your consent at any time. If your data is required for the performance of a contract or for taking steps prior to entering into a contract, we process your data on the basis of Article 6(1)(b) GDPR. Furthermore, we process your data if it is necessary for compliance with a legal obligation, on the basis of Article 6(1)(c) GDPR. Data processing may also be based on our legitimate interest pursuant to Art. 6 para. 1 lit. f GDPR. Information on the applicable legal bases in each individual case is provided in the following paragraphs of this privacy policy.
+
+Notice regarding data transfer to the USA and other third countries
+We use tools from companies based in the USA or other third countries that do not offer adequate data protection. When these tools are active, your personal data may be transferred to and processed in these third countries. Please note that a level of data protection comparable to that of the EU cannot be guaranteed in these countries. For example, US companies are obligated to disclose personal data to security authorities without you, as the data subject, having any legal recourse. Therefore, it cannot be ruled out that US authorities (e.g., intelligence agencies) may process, analyze, and permanently store your data located on US servers for surveillance purposes. We have no control over these processing activities.
+
+Revocation of your consent to data processing
+Many data processing operations are only possible with your explicit consent. You can revoke your consent at any time. The legality of data processing carried out before the revocation remains unaffected by the revocation.
+
+Right to object to data processing in special cases and to direct marketing (Art. 21 GDPR)
+If data processing is based on Article 6(1)(e) or (f) of the GDPR, you have the right to object, on grounds relating to your particular situation, at any time to processing of personal data concerning you; this also applies to profiling based on these provisions. The specific legal basis for each processing operation can be found in this privacy policy. If you object, we will no longer process your personal data unless we can demonstrate compelling legitimate grounds for the processing which override your interests, rights and freedoms or the processing serves the purpose of establishing, exercising or defending legal claims (objection pursuant to Art. 21 para. 1 GDPR).
+
+If your personal data is processed for direct marketing purposes, you have the right to object at any time to the processing of your personal data for such marketing; this also applies to profiling insofar as it is related to such direct marketing. If you object, your personal data will subsequently no longer be processed for direct marketing purposes (objection pursuant to Article 21(2) GDPR).
+
+Right to lodge a complaint with the competent supervisory authority
+In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority, in particular in the Member State of their habitual residence, their place of work, or the place of the alleged infringement. This right to lodge a complaint is without prejudice to any other administrative or judicial remedy.
+
+Right to data portability
+You have the right to receive the data that we process automatically based on your consent or in fulfillment of a contract, either for yourself or for a third party, in a commonly used, machine-readable format. If you request the direct transfer of the data to another controller, this will only be done if technically feasible.
+
+Information, deletion and correction
+Under applicable law, you have the right to request information, free of charge, about your stored personal data, its origin and recipients, and the purpose of the data processing, as well as the right to rectification or erasure of this data. You can contact us at any time with regard to this and any other questions concerning personal data.
+
+Right to restriction of processing
+You have the right to request the restriction of the processing of your personal data. You can contact us at any time to do so. The right to restrict processing exists in the following cases:
+
+If you dispute the accuracy of your personal data stored with us, we generally need time to verify this. For the duration of the verification process, you have the right to request the restriction of the processing of your personal data.
+If the processing of your personal data was/is unlawful, you can request the restriction of data processing instead of deletion.
+If we no longer need your personal data, but you require it for the establishment, exercise or defense of legal claims, you have the right to request restriction of processing of your personal data instead of erasure.
+If you have objected to processing pursuant to Article 21(1) GDPR, a balancing of interests between your interests and ours must be carried out. Until it is determined whose interests prevail, you have the right to request the restriction of the processing of your personal data.
+If you have restricted the processing of your personal data, this data – apart from being stored – may only be processed with your consent or for the establishment, exercise or defense of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the European Union or of a Member State.
+
+SSL or TLS encryption
+This site uses SSL/TLS encryption for security reasons and to protect the transmission of confidential information, such as orders or inquiries that you send to us as the site operator. You can recognize an encrypted connection by the fact that the browser's address bar changes from "http://" to "https://" and by the lock symbol in your browser's address bar.
+
+When SSL or TLS encryption is enabled, the data you send to us cannot be read by third parties.
+
+Objection to advertising emails
+The use of contact details published as part of the legal notice for sending unsolicited advertising and informational materials is hereby prohibited. The operators of these pages expressly reserve the right to take legal action in the event of unsolicited advertising, such as spam emails.
+
+4. Data collection on this website
+Cookies
+Our website uses so-called "cookies." Cookies are small text files that do not harm your device. They are stored on your device either temporarily for the duration of a session (session cookies) or permanently (persistent cookies). Session cookies are automatically deleted after you leave our website. Persistent cookies remain stored on your device until you delete them yourself or until they are automatically deleted by your web browser.
+
+In some cases, cookies from third-party companies may also be stored on your device when you visit our site (third-party cookies). These enable us or you to use certain services provided by the third-party company (e.g., cookies for processing payment services).
+
+Cookies serve various functions. Many cookies are technically necessary, as certain website functions would not work without them (e.g., the shopping cart function or the display of videos). Other cookies are used to analyze user behavior or to display advertising.
+
+Cookies that are necessary for carrying out electronic communication, for providing certain functions you have requested (e.g., for the shopping cart function), or for optimizing the website (e.g., cookies for measuring website traffic) (necessary cookies) are stored on the basis of Article 6(1)(f) GDPR, unless another legal basis is specified. The website operator has a legitimate interest in storing necessary cookies to ensure the technically flawless and optimized provision of its services. If consent to the storage of cookies and similar recognition technologies has been requested, processing is carried out exclusively on the basis of this consent (Article 6(1)(a) GDPR and Section 25(1) TTDSG); this consent can be revoked at any time.
+
+You can configure your browser to notify you when cookies are set and to allow cookies only in individual cases, to accept cookies in certain cases or to generally reject them, and to automatically delete cookies when you close your browser. Disabling cookies may limit the functionality of this website.
+
+If cookies from third-party companies or for analysis purposes are used, we will inform you separately about this within the framework of this privacy policy and, if necessary, request your consent.
+
+Server log files
+The website provider automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. This information includes:
+
+Browser type and browser version
+Operating system used
+Referrer URL
+Hostname of the accessing computer
+Time of server request
+IP address
+This data will not be combined with other data sources.
+
+This data is collected on the basis of Article 6(1)(f) GDPR. The website operator has a legitimate interest in the technically flawless presentation and optimization of its website – for this purpose, the server log files must be recorded.
+
+Contact form
+If you send us inquiries via the contact form, your information from the inquiry form, including the contact details you provided, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We will not share this data without your consent.
+
+The processing of this data is based on Article 6(1)(b) GDPR if your request is related to the performance of a contract or is necessary for taking steps prior to entering into a contract. In all other cases, processing is based on our legitimate interest in the effective handling of inquiries addressed to us (Article 6(1)(f) GDPR) or on your consent (Article 6(1)(a) GDPR), if such consent has been obtained; you may withdraw your consent at any time.
+
+The data you enter in the contact form will remain with us until you request its deletion, revoke your consent to its storage, or the purpose for data storage no longer applies (e.g., after your inquiry has been processed). Mandatory legal provisions – in particular, retention periods – remain unaffected.
+
+Inquiries via email, telephone or fax
+When you contact us by email, telephone, or fax, your inquiry, including all resulting personal data (name, inquiry), will be stored and processed by us for the purpose of handling your request. We will not share this data without your consent.
+
+The processing of this data is based on Article 6(1)(b) GDPR if your request is related to the performance of a contract or is necessary for taking steps prior to entering into a contract. In all other cases, processing is based on our legitimate interest in the effective handling of inquiries addressed to us (Article 6(1)(f) GDPR) or on your consent (Article 6(1)(a) GDPR), if such consent has been obtained; you may withdraw your consent at any time.
+
+The data you send us via contact requests will remain with us until you request its deletion, revoke your consent to its storage, or the purpose for data storage no longer applies (e.g., after your request has been processed). Mandatory legal provisions – in particular, statutory retention periods – remain unaffected.
+
+5. Newsletter
+Newsletter data
+If you wish to subscribe to the newsletter offered on this website, we require your email address and information that allows us to verify that you are the owner of the email address provided and that you agree to receive the newsletter. No further data is collected, or only on a voluntary basis. We use this data exclusively for sending the requested information and do not share it with third parties.
+
+The processing of the data entered in the newsletter registration form is based solely on your consent (Art. 6 para. 1 lit. a GDPR). You can revoke your consent to the storage of your data, your email address, and its use for sending the newsletter at any time, for example, via the "Unsubscribe" link in the newsletter. The lawfulness of the data processing operations already carried out remains unaffected by the revocation.
+
+The data you provide for the purpose of subscribing to our newsletter will be stored by us or our newsletter service provider until you unsubscribe. After you unsubscribe or the purpose for receiving the newsletter no longer applies, your data will be deleted from the newsletter distribution list. We reserve the right to delete or block email addresses from our newsletter distribution list at our own discretion, based on our legitimate interest pursuant to Art. 6 para. 1 lit. f GDPR.
+
+Data that we have stored for other purposes remains unaffected.
+
+After you unsubscribe from our newsletter mailing list, your email address may be stored on a blacklist by us or our newsletter service provider if this is necessary to prevent future mailings. The data on the blacklist will only be used for this purpose and will not be combined with other data. This serves both your interest and our interest in complying with legal requirements for sending newsletters (legitimate interest within the meaning of Art. 6 para. 1 lit. f GDPR). Storage on the blacklist is not time-limited. You can object to this storage if your interests outweigh our legitimate interest.
+
+6. Plugins and Tools
+Google Web Fonts
+This website uses web fonts provided by Google for consistent font display. When you visit a page, your browser loads the necessary web fonts into its browser cache to display text and fonts correctly.
+
+For this purpose, the browser you are using must connect to Google's servers. This allows Google to know that this website was accessed via your IP address. The use of Google Web Fonts is based on Article 6(1)(f) GDPR. The website operator has a legitimate interest in the uniform presentation of the typeface on their website. If corresponding consent has been requested, processing is carried out exclusively on the basis of Article 6(1)(a) GDPR and Section 25(1) of the German Telecommunications and Telemedia Data Protection Act (TTDSG), insofar as the consent includes the storage of cookies or access to information on the user's device (e.g., device fingerprinting) within the meaning of the TTDSG. Consent can be revoked at any time.
+
+If your browser does not support web fonts, a standard font from your computer will be used.
+
+Further information about Google Web Fonts can be found at https://developers.google.com/fonts/faq and in Google's privacy policy: https://policies.google.com/privacy?hl=de .
+
+Google reCAPTCHA
+We use “Google reCAPTCHA” (hereinafter “reCAPTCHA”) on this website. The provider is Google Ireland Limited (“Google”), Gordon House, Barrow Street, Dublin 4, Ireland.
+
+reCAPTCHA is used to verify whether data entry on this website (e.g., in a contact form) is done by a human or an automated program. To do this, reCAPTCHA analyzes the website visitor's behavior based on various characteristics. This analysis begins automatically as soon as the visitor enters the website. For the analysis, reCAPTCHA evaluates various pieces of information (e.g., IP address, the visitor's time spent on the website, or mouse movements made by the user). The data collected during the analysis is forwarded to Google.
+
+The reCAPTCHA analysis runs entirely in the background. Website visitors are not notified that an analysis is taking place.
+
+The data is stored and analyzed based on Article 6(1)(f) GDPR. The website operator has a legitimate interest in protecting its web services from abusive automated access and spam. If consent has been requested, processing is carried out exclusively on the basis of Article 6(1)(a) GDPR and Section 25(1) of the German Telecommunications and Telemedia Data Protection Act (TTDSG), insofar as the consent includes the storage of cookies or access to information on the user's device (e.g., device fingerprinting) within the meaning of the TTDSG. Consent can be withdrawn at any time.
+
+For more information about Google reCAPTCHA, please see the Google Privacy Policy and the Google Terms of Service at the following links: https://policies.google.com/privacy?hl=de and https://policies.google.com/terms?hl=de .
+
+7. External Online Platforms Introduction
+External Online Platforms Privacy Policy Summary
+👥 Data Subjects: Visitors to the website or visitors to external online platforms
+🤝Purpose: Presentation and optimization of our services, contact with visitors and interested parties
+📓Data Processed: Data such as telephone numbers, email addresses, contact details, user behavior data, information about your device, and your IP address.
+Further details can be found on the respective platform.
+📅Storage Period: Dependent on the platforms used
+⚖️Legal Basis: Art. 6 para. 1 lit. a GDPR (Consent), Art. 6 para. 1 lit. f GDPR (Legitimate Interests)
+What are external online platforms?
+To offer our services and products beyond our website, we also use external platforms. These are mostly online marketplaces such as Amazon or eBay. In addition to our responsibility for data protection, the data protection regulations of the external platforms we use also apply. This is especially true when our products are purchased through the platform, i.e., when a payment transaction takes place. Furthermore, most platforms also use your data to optimize their own marketing efforts. For example, the platform can use the collected data to tailor advertisements precisely to the interests of customers and website visitors.
+
+Why do we use external online platforms?
+In addition to our website, we also want to offer our products on other platforms to reach more customers. External online marketplaces such as Amazon, eBay, and Digistore24 provide large sales platforms that offer our products to people who may not be familiar with our website. It's also possible that embedded elements on our site may redirect to an external online platform. The data processed and stored by the online platform we use serves two purposes: firstly, to log the payment process, and secondly, to conduct web analytics.
+
+The goal of these analyses is to develop more precise and personalized marketing and advertising strategies. Based on your behavior on a platform, the analyzed data can be used to draw conclusions about your interests and create user profiles. This allows the platforms to present you with tailored advertisements and products. For this purpose, cookies are usually placed in your browser to store data about your browsing behavior.
+
+Please note that when using the platforms or our integrated elements, your data may also be processed outside the European Union, as online platforms such as Amazon or eBay are American companies. This may make it more difficult for you to assert or enforce your rights regarding your personal data.
+
+What data is processed?
+The specific data stored and processed depends on the external platform. However, it typically includes information such as phone numbers, email addresses, contact form entries, user data (e.g., which buttons you click, when you visited which pages), device information, and your IP address. Most of this data is often stored in cookies. If you have a profile on an external platform and are logged in, data can be linked to that profile. The collected data is stored and processed on the servers of the platforms used. You can find out exactly how an external platform stores, manages, and processes data in its respective privacy policy. If you have any questions about data storage and processing, or wish to exercise your rights, we recommend contacting the platform directly.
+
+Duration of data processing
+We will inform you about the duration of data processing below, provided we have further information on this. For example, Amazon stores data until it is no longer needed for its own purposes. Generally, we only process personal data for as long as it is absolutely necessary for the provision of our services and products.
+
+Right to object
+You also have the right and the option to withdraw your consent to the use of cookies at any time. This can be done either via our cookie management tool or via opt-out functions on the respective external platform. Furthermore, you can also prevent data collection by cookies by managing, disabling, or deleting cookies in your browser.
+
+Since cookies may be used, we also recommend that you read our general privacy policy about cookies. To find out exactly what data is stored and processed about you, you should read the privacy policies of the respective external platforms.
+
+Legal basis
+If you have consented to your data being processed and stored by external platforms, this consent serves as the legal basis for data processing (Art. 6 para. 1 lit. a GDPR) . In principle, if consent has been given, your data will also be stored and processed on the basis of a legitimate interest (Art. 6 para. 1 lit. f GDPR) in fast and effective communication with you or other customers and business partners. However, if we have integrated elements from external platforms on our website, we will only use them if you have given your consent.
+
+Information on specific external platforms – if available – can be found in the following sections.
+
+Etsy Privacy Policy
+We use the online marketplace Etsy. The service provider is the American company Etsy Inc. For the European region, Etsy Ireland UC (66/67 Great Strand Street, Dublin 1, Ireland) is responsible for all Google services.
+
+Etsy processes your data, among other places, in the USA. We would like to point out that, according to the European Court of Justice, there is currently no adequate level of protection for data transfers to the USA. This can entail various risks to the lawfulness and security of data processing.
+
+Etsy uses so-called Standard Contractual Clauses (SCCs) as the basis for data processing by recipients located in third countries (outside the European Union, Iceland, Liechtenstein, Norway, i.e., in particular the USA) or for data transfers to such countries. Standard Contractual Clauses (SCCs) are model clauses provided by the European Commission and are designed to ensure that your data complies with European data protection standards even when it is transferred to and stored in third countries (such as the USA). These clauses oblige Etsy to maintain the European level of data protection when processing your relevant data, even if the data is stored, processed, and managed in the USA. These clauses are based on an implementing decision of the European Commission. You can find the decision and the corresponding Standard Contractual Clauses here: https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de
+
+For more information about the standard contractual clauses and the data processed through the use of Etsy, please see the Privacy Policy at https://www.etsy.com/legal/privacy/ .
+
+ 
+
+Source: https://www.e-recht24.de
+Source Point 7: Created with the data privacy generator from AdSimple

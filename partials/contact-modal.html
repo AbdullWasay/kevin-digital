@@ -1,0 +1,71 @@
+
+  <div id="contact-modal" class="contact-modal" hidden aria-hidden="true">
+    <div class="contact-modal__backdrop" data-contact-close tabindex="-1"></div>
+    <div
+      class="contact-modal__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+    >
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="contact-form__head">
+          <h2 id="contact-modal-title" class="contact-form__title" data-i18n="form.title">Starten Sie Ihre Reise mit mir</h2>
+          <p class="contact-form__subtitle" data-i18n="form.subtitle">Füllen Sie das Formular aus und legen wir los.</p>
+        </div>
+        <div class="contact-form__fields">
+          <div class="contact-form__field">
+            <input
+              class="contact-form__input"
+              type="text"
+              name="name"
+              placeholder="Name"
+              data-i18n-placeholder="form.name"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="contact-form__field">
+            <input
+              class="contact-form__input"
+              type="email"
+              name="email"
+              placeholder="E-Mail"
+              data-i18n-placeholder="form.email"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div class="contact-form__field">
+            <input
+              class="contact-form__input"
+              type="tel"
+              name="phone"
+              placeholder="Telefonnummer"
+              data-i18n-placeholder="form.phone"
+              autocomplete="tel"
+            />
+          </div>
+          <div class="contact-form__field">
+            <textarea
+              class="contact-form__textarea"
+              name="message"
+              placeholder="Nachricht"
+              data-i18n-placeholder="form.message"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="contact-form__submit" data-i18n="form.submit">Gespräch vereinbaren</button>
+        </div>
+        <div class="contact-form__success" aria-live="polite">
+          <div class="contact-form__success-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18.5L15 24.5L27 12.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="contact-form__success-title" data-i18n="form.successTitle">Erfolgreich gesendet</p>
+          <p class="contact-form__success-text" data-i18n="form.successText">Vielen Dank! Wir melden uns in Kürze bei Ihnen.</p>
+        </div>
+      </form>
+    </div>
+  </div>

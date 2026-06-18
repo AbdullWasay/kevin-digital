@@ -1,0 +1,60 @@
+  <header class="site-header" id="site-header">
+    <div class="page-container site-header__inner">
+      <a href="index.html" class="site-header__logo cursor-hover">
+        <img src="assets/KevinDigital%202.svg" alt="Kevin Digital" class="logo-header" />
+      </a>
+      <div class="site-header__actions">
+        <nav class="site-nav" id="site-nav" data-cursor-nav aria-label="Hauptnavigation" data-i18n-aria="a11y.nav">
+          <a href="index.html#about" class="cursor-hover site-nav__link" data-i18n="nav.about">ÜBER MICH</a>
+          <a href="index.html#services" class="cursor-hover site-nav__link" data-i18n="nav.services">LEISTUNGEN</a>
+          <a href="index.html#cases" class="cursor-hover site-nav__link" data-i18n="nav.cases">CASE STUDIES</a>
+          <a href="index.html#contact" class="cursor-hover site-nav__link site-nav__link--cta" data-contact-open data-i18n="nav.book">Beratung buchen</a>
+        </nav>
+        <div class="site-header__tools">
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button
+              type="button"
+              class="lang-dropdown__trigger cursor-hover"
+              id="lang-dropdown-trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="lang-dropdown-menu"
+              data-i18n-aria="a11y.lang"
+            >
+              <span class="lang-dropdown__code">DE</span>
+              <svg class="lang-dropdown__icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="lang-dropdown__menu" id="lang-dropdown-menu" role="listbox" hidden>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option is-active" data-lang="de" role="option" aria-selected="true">
+                  <span class="lang-dropdown__option-code">DE</span>
+                  <span data-i18n="lang.de">Deutsch</span>
+                </button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option" data-lang="en" role="option" aria-selected="false">
+                  <span class="lang-dropdown__option-code">EN</span>
+                  <span data-i18n="lang.en">English</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <a href="index.html#contact" class="cursor-hover btn-nav-primary site-header__cta" data-contact-open data-i18n="nav.book">Beratung buchen</a>
+        </div>
+        <button
+          type="button"
+          class="site-nav-toggle"
+          id="site-nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Menü öffnen"
+          data-i18n-aria="a11y.menuOpen"
+        >
+          <span class="site-nav-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="site-nav-backdrop" id="site-nav-backdrop" hidden aria-hidden="true"></div>
