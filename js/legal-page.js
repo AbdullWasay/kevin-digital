@@ -25,7 +25,7 @@
 
   function updateActiveFooterLink() {
     var path = window.location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll(".footer__links-row--legal a").forEach(function (link) {
+    document.querySelectorAll(".footer__bottom-links a").forEach(function (link) {
       var href = link.getAttribute("href") || "";
       link.classList.toggle("is-active", href === path);
     });

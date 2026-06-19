@@ -499,10 +499,13 @@ ul {
 
 /* Contact badge spin */
 .contact-badge {
+  display: block;
   position: relative;
   width: 176px;
   height: 176px;
   animation: spin 18s linear infinite;
+  color: inherit;
+  text-decoration: none;
 }
 
 .contact-badge img {
