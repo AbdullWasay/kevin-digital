@@ -633,7 +633,7 @@ button.card-row__media--play:hover .play-overlay img {
 .video-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
+  background: #000;
 }
 
 .video-modal__dialog {
@@ -643,10 +643,6 @@ button.card-row__media--play:hover .play-overlay img {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-}
-
-.video-modal--mobile .video-modal__dialog {
-  width: 100%;
 }
 
 .video-modal__header {
@@ -702,6 +698,10 @@ button.card-row__media--play:hover .play-overlay img {
 
 body.video-modal-open {
   overflow: hidden;
+}
+
+body.video-modal-open .play-overlay {
+  visibility: hidden;
 }
 
 .card-row__media--play .play-overlay {

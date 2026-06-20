@@ -1,10 +1,16 @@
 (function () {
+  var DESKTOP_MIN = 1024;
+
+  function isDesktopStack() {
+    return window.innerWidth >= DESKTOP_MIN;
+  }
+
   function getStackTopPx() {
     var raw = getComputedStyle(document.documentElement).getPropertyValue(
       "--site-header-height"
     );
     var height = parseFloat(raw) || 80;
-    return height + (window.innerWidth < 640 ? 0 : 12);
+    return height + 12;
   }
 
   function isStuck(el, stackTop) {
@@ -12,40 +18,53 @@
   }
 
   function initStack(stackEl) {
-    const items = Array.from(stackEl.querySelectorAll(".stack-cards__item"));
+    var items = Array.from(stackEl.querySelectorAll(".stack-cards__item"));
     if (items.length === 0) return;
 
-    function applyLayout() {
-      const stackTop = getStackTopPx();
-      const mobile = window.innerWidth < 640;
+    function clearInlineLayout() {
+      items.forEach(function (item) {
+        item.style.zIndex = "";
+        item.style.marginBottom = "";
+        item.style.top = "";
+      });
+    }
 
-      items.forEach((item, index) => {
+    function applyLayout() {
+      if (!isDesktopStack()) {
+        clearInlineLayout();
+        return 0;
+      }
+
+      var stackTop = getStackTopPx();
+      items.forEach(function (item, index) {
         item.style.zIndex = String(50 + index);
         if (index < items.length - 1) {
-          item.style.marginBottom = mobile ? "1.25rem" : "24px";
+          item.style.marginBottom = "24px";
         }
-        item.style.top = mobile ? "" : stackTop + "px";
+        item.style.top = stackTop + "px";
       });
 
       return stackTop;
     }
 
     function update() {
-      const stackTop = applyLayout();
-
-      if (window.innerWidth < 640) {
-        items.forEach((item) => {
+      if (!isDesktopStack()) {
+        items.forEach(function (item) {
           item.classList.remove("stack-cards__item--covered");
         });
+        clearInlineLayout();
         return;
       }
 
-      const next = items.map((item, index) => {
+      var stackTop = applyLayout();
+      var next = items.map(function (item, index) {
         if (!isStuck(item, stackTop)) return false;
-        return items.slice(index + 1).some((above) => isStuck(above, stackTop));
+        return items.slice(index + 1).some(function (above) {
+          return isStuck(above, stackTop);
+        });
       });
 
-      items.forEach((item, index) => {
+      items.forEach(function (item, index) {
         item.classList.toggle("stack-cards__item--covered", next[index]);
       });
     }

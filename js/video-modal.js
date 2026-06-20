@@ -7,7 +7,6 @@
   var triggers = document.querySelectorAll("[data-video-open]");
   var closeEls = document.querySelectorAll("[data-video-close]");
   var lastFocus = null;
-  var mobile = window.matchMedia("(max-width: 1023px)");
 
   function embedUrl(id) {
     return "https://drive.google.com/file/d/" + id + "/preview?usp=embed";
@@ -16,15 +15,9 @@
   function open(id, title) {
     iframe.src = embedUrl(id);
     titleEl.textContent = title || "Video";
-
-    if (mobile.matches) {
-      modal.classList.add("video-modal--mobile");
-    }
-
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("video-modal-open");
-
     lastFocus = document.activeElement;
     modal.querySelector(".video-modal__close").focus();
   }
@@ -33,7 +26,6 @@
     iframe.src = "";
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
-    modal.classList.remove("video-modal--mobile");
     document.body.classList.remove("video-modal-open");
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
