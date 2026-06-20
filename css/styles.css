@@ -690,7 +690,6 @@ button.card-row__media--play:hover .play-overlay img {
   overflow: hidden;
 }
 
-.video-modal__poster,
 .video-modal__player iframe {
   position: absolute;
   inset: 0;
@@ -698,58 +697,7 @@ button.card-row__media--play:hover .play-overlay img {
   height: 100%;
   border: 0;
   display: block;
-}
-
-.video-modal__poster {
-  object-fit: cover;
-  z-index: 1;
-}
-
-.video-modal__poster[hidden],
-.video-modal__player iframe[hidden] {
-  display: none;
-}
-
-.video-modal__player iframe {
-  z-index: 2;
   background: #000;
-}
-
-.video-modal__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background: rgba(0, 0, 0, 0.25);
-  pointer-events: none;
-}
-
-.video-modal__overlay[hidden] {
-  display: none;
-}
-
-.video-modal__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 4;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  line-height: 0;
-}
-
-.video-modal__play[hidden] {
-  display: none;
-}
-
-.video-modal__play img {
-  width: clamp(3.5rem, 14vw, 5rem);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
 }
 
 body.video-modal-open {

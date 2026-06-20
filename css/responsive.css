@@ -577,16 +577,8 @@
     font-size: 1rem;
   }
 
-  /* Poster preview: 16:9 before play */
-  .video-modal--mobile:not(.is-playing) .video-modal__player {
-    flex: 0 0 auto;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    margin: auto 0;
-  }
-
-  /* Google Drive embed fills screen when playing */
-  .video-modal--mobile.is-playing .video-modal__player {
+  /* Google Drive embed fills screen on mobile */
+  .video-modal--mobile .video-modal__player {
     flex: 1 1 auto;
     width: 100%;
     min-height: 0;
@@ -594,15 +586,7 @@
     height: auto;
     margin: 0;
     border-radius: 0;
-  }
-
-  .video-modal--mobile .video-modal__player {
-    border-radius: 0;
     overflow: hidden;
-  }
-
-  .video-modal__play img {
-    width: 3.5rem;
   }
 }
 
