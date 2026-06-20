@@ -270,6 +270,7 @@
                 data-video-open
                 data-video-id="1FeUNJCuHCbXMBTuGNdkEiXBDnWsTh9eC"
                 data-video-title="Laserland Project"
+                data-video-poster="assets/video%20cover%201.png"
                 aria-label="Laserland Video abspielen"
                 data-i18n-aria="case1.video"
               >
@@ -302,6 +303,7 @@
                 data-video-open
                 data-video-id="1n9mOmSyxir3OXVjBTMqa1w4Cr8xj3TD2"
                 data-video-title="Gradtsummt Project"
+                data-video-poster="assets/video%20cover%202.png"
                 aria-label="Gradtsummt Video abspielen"
                 data-i18n-aria="case2.video"
               >
@@ -471,10 +473,49 @@
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
       <div class="video-modal__header">
         <h2 id="video-modal-title" class="video-modal__title"></h2>
-        <button type="button" class="video-modal__close cursor-hover" data-video-close aria-label="Video schließen" data-i18n-aria="a11y.closeVideo">&times;</button>
+        <div class="video-modal__header-actions">
+          <button
+            type="button"
+            class="video-modal__expand cursor-hover"
+            id="video-modal-expand"
+            hidden
+            aria-pressed="false"
+            aria-label="Vollbild"
+            data-i18n-aria="a11y.enterFullscreen"
+            data-label-enter="Vollbild"
+            data-label-exit="Vollbild beenden"
+            data-i18n-label-enter="a11y.enterFullscreen"
+            data-i18n-label-exit="a11y.exitFullscreen"
+          >
+            <svg class="video-modal__expand-icon video-modal__expand-icon--enter" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="video-modal__expand-icon video-modal__expand-icon--exit" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" class="video-modal__close cursor-hover" data-video-close aria-label="Video schließen" data-i18n-aria="a11y.closeVideo">&times;</button>
+        </div>
       </div>
       <div class="video-modal__frame-wrap">
-        <iframe id="video-modal-iframe" title="Case study video" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <div class="video-modal__stage">
+          <img class="video-modal__poster" id="video-modal-poster" alt="" hidden />
+          <iframe id="video-modal-iframe" title="Case study video" src="" allow="autoplay; fullscreen; encrypted-media" allowfullscreen hidden></iframe>
+          <div class="video-modal__overlay" id="video-modal-overlay">
+            <button
+              type="button"
+              class="video-modal__play cursor-hover"
+              id="video-modal-play"
+              aria-label="Video abspielen"
+              data-i18n-aria="a11y.playVideo"
+            >
+              <span class="video-modal__play-icon" aria-hidden="true"></span>
+            </button>
+            <div class="video-modal__loading" id="video-modal-loading" hidden aria-hidden="true">
+              <span class="video-modal__spinner"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

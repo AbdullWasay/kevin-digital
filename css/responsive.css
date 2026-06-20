@@ -547,9 +547,108 @@
 @media (max-width: 1023px) {
   .site-nav-toggle,
   .video-modal__close,
+  .video-modal__expand,
   .btn-nav-primary {
     min-width: 44px;
     min-height: 44px;
+  }
+
+  /* Video modal — mobile: embedded player + working fullscreen toggle */
+  .video-modal {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .video-modal__dialog {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100dvh;
+    height: 100dvh;
+    gap: 0;
+  }
+
+  .video-modal--mobile .video-modal__header {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.75rem;
+    background: #000;
+    pointer-events: auto;
+  }
+
+  .video-modal--mobile .video-modal__title {
+    font-size: 1rem;
+  }
+
+  .video-modal--mobile .video-modal__frame-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    aspect-ratio: unset;
+    border-radius: 0;
+    box-shadow: none;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 0 max(0.75rem, env(safe-area-inset-bottom));
+  }
+
+  .video-modal--mobile .video-modal__stage {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-modal--mobile .video-modal__frame-wrap iframe {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .video-modal--mobile .video-modal__poster {
+    z-index: 1;
+    object-fit: cover;
+  }
+
+  .video-modal--mobile .video-modal__overlay {
+    display: none;
+  }
+
+  .video-modal__header {
+    flex-shrink: 0;
+    padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.75rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.55));
+  }
+
+  .video-modal__play-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .video-modal__play-icon::after {
+    border-width: 0.75rem 0 0.75rem 1.25rem;
+  }
+
+  .video-modal__spinner {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin: -1.875rem 0 0 -1.875rem;
   }
 }
 
