@@ -5,7 +5,6 @@
   var playBtn = document.getElementById("video-modal-play");
   var overlay = document.getElementById("video-modal-overlay");
   var posterEl = document.getElementById("video-modal-poster");
-  var hintEl = document.getElementById("video-modal-hint");
   if (!modal || !iframe || !titleEl || !playBtn || !overlay || !posterEl) return;
 
   var triggers = document.querySelectorAll("[data-video-open]");
@@ -19,11 +18,7 @@
   }
 
   function embedUrl(id) {
-    return "https://drive.google.com/file/d/" + id + "/preview?autoplay=1";
-  }
-
-  function viewUrl(id) {
-    return "https://drive.google.com/file/d/" + id + "/view";
+    return "https://drive.google.com/file/d/" + id + "/preview?usp=embed&autoplay=1";
   }
 
   function showPoster(src) {
@@ -39,6 +34,7 @@
   function showPlayOverlay() {
     overlay.hidden = false;
     playBtn.hidden = false;
+    modal.classList.remove("is-playing");
   }
 
   function hidePlayOverlay() {
@@ -52,24 +48,16 @@
     iframe.hidden = true;
     showPoster("");
     hidePlayOverlay();
-    modal.classList.remove("video-modal--mobile");
-    if (hintEl) hintEl.hidden = true;
+    modal.classList.remove("video-modal--mobile", "is-playing");
   }
 
   function startVideo() {
     if (!fileId) return;
-
-    /* Google Drive embed clips controls on mobile — open native player instead */
-    if (isMobile()) {
-      var tab = window.open(viewUrl(fileId), "_blank", "noopener,noreferrer");
-      if (!tab) window.location.href = viewUrl(fileId);
-      return;
-    }
-
     hidePlayOverlay();
     posterEl.hidden = true;
     iframe.hidden = false;
     iframe.src = embedUrl(fileId);
+    modal.classList.add("is-playing");
   }
 
   function open(id, title, poster) {
@@ -81,7 +69,6 @@
 
     if (isMobile()) {
       modal.classList.add("video-modal--mobile");
-      if (hintEl) hintEl.hidden = false;
     }
 
     modal.hidden = false;
