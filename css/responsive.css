@@ -5,14 +5,22 @@
 
 /* —— Mobile background (desktop uses HOME PAGE.png in styles.css) —— */
 @media (max-width: 1023px) {
+  .site-shell {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
   .site-shell::before {
     background-image: url("../assets/mobile-screen-bg.png");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top;
-    /* 375×10896 source — scale height to match rendered width */
-    height: calc(100vw * 10896 / 375);
-    min-height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    min-height: 0;
   }
 }
 
@@ -526,36 +534,36 @@
   }
 }
 
-/* —— Sticky cards: slide-in on mobile/tablet, sticky stack on desktop only —— */
+/* —— Sticky cards: rise-in on mobile/tablet, sticky stack on desktop only —— */
 @media (max-width: 1023px) {
+  .stack-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
   .stack-cards__item {
     position: relative !important;
     top: auto !important;
-    margin-bottom: 1.25rem !important;
+    z-index: auto !important;
+    margin-bottom: 0 !important;
     opacity: 0;
-    transform: translateX(0);
+    transform: translateY(3rem);
+    pointer-events: none;
     transition:
-      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .stack-cards__item--from-left {
-    transform: translateX(-2.75rem);
-  }
-
-  .stack-cards__item--from-right {
-    transform: translateX(2.75rem);
+      opacity 2.2s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .stack-cards__item--visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .stack-cards__item--covered {
     visibility: visible;
     pointer-events: auto;
-    opacity: 1;
   }
 
   .stack-cards__spacer {
@@ -608,7 +616,13 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     height: auto;
-    border-radius: 0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .video-modal__video {
+    object-fit: contain;
+    border-radius: 12px;
   }
 }
 

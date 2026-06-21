@@ -8,23 +8,16 @@
   var observedItems = [];
 
   function clearSlideClasses(item) {
-    item.classList.remove(
-      "stack-cards__item--from-left",
-      "stack-cards__item--from-right",
-      "stack-cards__item--visible"
-    );
+    item.classList.remove("stack-cards__item--visible");
+    item.style.removeProperty("--card-reveal");
   }
 
   function setupItems() {
     observedItems = [];
     stacks.forEach(function (stack) {
-      stack.querySelectorAll(".stack-cards__item").forEach(function (item, index) {
+      stack.querySelectorAll(".stack-cards__item").forEach(function (item) {
         clearSlideClasses(item);
-        if (MOBILE_QUERY.matches && !reduced) {
-          item.classList.add(
-            index % 2 === 0 ? "stack-cards__item--from-left" : "stack-cards__item--from-right"
-          );
-        } else if (MOBILE_QUERY.matches) {
+        if (MOBILE_QUERY.matches && reduced) {
           item.classList.add("stack-cards__item--visible");
         }
         observedItems.push(item);
@@ -41,10 +34,12 @@
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add("stack-cards__item--visible");
+          } else {
+            entry.target.classList.remove("stack-cards__item--visible");
           }
         });
       },
-      { root: null, threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+      { root: null, threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
     );
 
     observedItems.forEach(function (item) {

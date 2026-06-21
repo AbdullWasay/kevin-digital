@@ -475,8 +475,27 @@
         <h2 id="video-modal-title" class="video-modal__title"></h2>
         <button type="button" class="video-modal__close cursor-hover" data-video-close aria-label="Video schließen" data-i18n-aria="a11y.closeVideo">&times;</button>
       </div>
-      <div class="video-modal__player">
+      <div class="video-modal__player" id="video-modal-player">
         <iframe id="video-modal-iframe" title="Case study video" src="" allow="fullscreen" allowfullscreen></iframe>
+        <video
+          id="video-modal-video"
+          class="video-modal__video"
+          controls
+          playsinline
+          webkit-playsinline
+          preload="auto"
+          hidden
+        ></video>
+        <button
+          type="button"
+          class="video-modal__play-hit"
+          id="video-modal-play-hit"
+          hidden
+          aria-label="Video abspielen"
+        >
+          <img src="assets/play.svg" alt="" />
+        </button>
+        <p class="video-modal__loading" id="video-modal-loading" hidden>Video wird geladen…</p>
       </div>
     </div>
   </div>
