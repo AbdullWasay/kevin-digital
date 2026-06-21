@@ -14,19 +14,19 @@
   bottom: 0;
 }
 
-/* Mobile/tablet — same background as homepage */
+/* Mobile/tablet — tiled background for long legal pages */
 @media (max-width: 1023px) {
   .legal-page-body .site-shell::before {
     background-image: url("../assets/mobile-screen-bg.png");
     background-size: 100% auto;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: center top;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     height: auto;
-    min-height: 0;
+    min-height: 100%;
   }
 }
 
