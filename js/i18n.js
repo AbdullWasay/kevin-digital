@@ -30,7 +30,7 @@
         "Als Social Media Manager und YouTube-SEO-Spezialist unterstütze ich Unternehmen und Creator beim Aufbau ihrer Online-Präsenz. Mein Fokus liegt auf strukturierten Content-Strategien, die Sichtbarkeit erhöhen und nachhaltiges Publikumswachstum schaffen. Mit Erfahrung in der Verwaltung mehrerer digitaler Kanäle und über 1.200 veröffentlichten Videos verbinde ich Strategie, Analyse und Umsetzung, um Plattformen mit langfristiger Reichweite aufzubauen.",
       "hero.cta": "CASE STUDIES ANSEHEN",
       "hero.portrait": "Kevin Porträt",
-      "hero.contactPhone": "Anrufen: +49 1523 3933 529",
+      "hero.contactWhatsApp": "WhatsApp: +49 1523 3933 529",
       "services.title": "Kernkompetenzen",
       "services.copy":
         "Ob Online-Präsenz, automatisierte Abläufe oder Reiseplanung — ich biete strukturierte Lösungen, die auf Ihre Ziele zugeschnitten sind.",
@@ -148,7 +148,7 @@
         "I work as a Social Media Manager and YouTube SEO specialist helping businesses and creators grow their online presence. My work focuses on building structured content strategies that increase visibility and create sustainable audience growth. With experience managing multiple digital channels and publishing more than 1,200 videos, I combine strategy, analytics and execution to build online platforms that generate long term reach.",
       "hero.cta": "VIEW CASE STUDIES",
       "hero.portrait": "Kevin portrait",
-      "hero.contactPhone": "Call: +49 1523 3933 529",
+      "hero.contactWhatsApp": "WhatsApp: +49 1523 3933 529",
       "services.title": "Core Expertise", 
       "services.copy":
         "Whether you want to grow your online presence, automate operations, or plan an unforgettable trip, I provide structured solutions tailored to your goals.",
