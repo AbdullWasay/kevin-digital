@@ -14,18 +14,6 @@
   var lastFocus = null;
   var wantsPlay = false;
 
-  function embedUrl(id) {
-    return "https://drive.google.com/file/d/" + id + "/preview?usp=embed";
-  }
-
-  function streamUrl(id) {
-    return (
-      "https://drive.usercontent.google.com/download?id=" +
-      id +
-      "&export=view&confirm=t"
-    );
-  }
-
   function isMobile() {
     return MOBILE_QUERY.matches;
   }
@@ -56,7 +44,7 @@
     setLoading(false);
     setPlayHitVisible(false);
     iframe.src = "";
-    iframe.hidden = false;
+    iframe.hidden = true;
     video.pause();
     video.removeAttribute("src");
     video.removeAttribute("poster");
@@ -64,7 +52,7 @@
     video.hidden = true;
   }
 
-  function openMobile(id, poster, fileSrc) {
+  function openNative(src, poster) {
     iframe.hidden = true;
     iframe.src = "";
 
@@ -72,36 +60,23 @@
     if (poster) video.poster = poster;
     else video.removeAttribute("poster");
 
-    wantsPlay = true;
+    wantsPlay = isMobile();
     setLoading(true);
     setPlayHitVisible(false);
-    video.src = fileSrc || streamUrl(id);
+    video.src = src;
     video.load();
-  }
-
-  function openDesktop(id) {
-    video.hidden = true;
-    video.pause();
-    video.removeAttribute("src");
-    video.removeAttribute("poster");
-    video.load();
-
-    iframe.hidden = false;
-    iframe.src = embedUrl(id);
   }
 
   function open(id, title, poster, fileSrc) {
+    if (!fileSrc) return;
+
     titleEl.textContent = title || "Video";
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("video-modal-open");
     lastFocus = document.activeElement;
 
-    if (isMobile()) {
-      openMobile(id, poster || "", fileSrc || "");
-    } else {
-      openDesktop(id);
-    }
+    openNative(fileSrc, poster || "");
 
     if (!isMobile()) {
       modal.querySelector(".video-modal__close").focus();
@@ -156,11 +131,10 @@
 
   triggers.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var id = btn.getAttribute("data-video-id");
       var title = btn.getAttribute("data-video-title");
       var poster = btn.getAttribute("data-video-poster");
       var fileSrc = btn.getAttribute("data-video-src");
-      if (id) open(id, title, poster, fileSrc);
+      if (fileSrc) open(null, title, poster, fileSrc);
     });
   });
 
