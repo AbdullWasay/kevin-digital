@@ -4,7 +4,6 @@
   var iframe = document.getElementById("video-modal-iframe");
   var video = document.getElementById("video-modal-video");
   var playHit = document.getElementById("video-modal-play-hit");
-  var loadingEl = document.getElementById("video-modal-loading");
   var titleEl = document.getElementById("video-modal-title");
   if (!modal || !player || !iframe || !video || !titleEl) return;
 
@@ -16,12 +15,6 @@
 
   function isMobile() {
     return MOBILE_QUERY.matches;
-  }
-
-  function setLoading(on) {
-    if (!loadingEl) return;
-    loadingEl.hidden = !on;
-    player.classList.toggle("is-loading", on);
   }
 
   function setPlayHitVisible(on) {
@@ -41,7 +34,6 @@
 
   function resetPlayers() {
     wantsPlay = false;
-    setLoading(false);
     setPlayHitVisible(false);
     iframe.src = "";
     iframe.hidden = true;
@@ -61,7 +53,6 @@
     else video.removeAttribute("poster");
 
     wantsPlay = isMobile();
-    setLoading(true);
     setPlayHitVisible(false);
     video.src = src;
     video.load();
@@ -92,13 +83,11 @@
   }
 
   function onVideoCanPlay() {
-    setLoading(false);
     if (wantsPlay) attemptPlay();
   }
 
   function onVideoPlaying() {
     wantsPlay = false;
-    setLoading(false);
     setPlayHitVisible(false);
   }
 
@@ -106,12 +95,7 @@
     if (!video.hidden && !video.ended) setPlayHitVisible(true);
   }
 
-  function onVideoWaiting() {
-    if (!video.paused) setLoading(true);
-  }
-
   function onVideoError() {
-    setLoading(false);
     setPlayHitVisible(true);
   }
 
@@ -126,7 +110,6 @@
   video.addEventListener("canplay", onVideoCanPlay);
   video.addEventListener("playing", onVideoPlaying);
   video.addEventListener("pause", onVideoPause);
-  video.addEventListener("waiting", onVideoWaiting);
   video.addEventListener("error", onVideoError);
 
   triggers.forEach(function (btn) {

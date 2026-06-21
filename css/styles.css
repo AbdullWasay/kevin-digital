@@ -454,6 +454,18 @@ ul {
   margin-top: 0;
 }
 
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+}
+
+.hero__contact-book {
+  display: none;
+}
+
 .hero__contact {
   display: none;
   position: absolute;
@@ -468,6 +480,14 @@ ul {
 }
 
 @media (min-width: 768px) {
+  .hero-section .page-container {
+    position: relative;
+  }
+
+  .hero__image-wrap {
+    position: static;
+  }
+
   .hero__contact {
     display: block;
   }
@@ -480,6 +500,7 @@ ul {
 }
 
 .hero__image-wrap {
+  position: relative;
   margin-top: 5rem;
   overflow: hidden;
   border-radius: 30px;
@@ -728,30 +749,6 @@ button.card-row__media--play:hover .play-overlay img {
 
 .video-modal__play-hit[hidden] {
   display: none;
-}
-
-.video-modal__loading {
-  position: absolute;
-  left: 50%;
-  bottom: 1rem;
-  z-index: 4;
-  margin: 0;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.72);
-  color: var(--figma-white);
-  font-family: var(--font-display);
-  font-size: 0.8125rem;
-  pointer-events: none;
-}
-
-.video-modal__loading[hidden] {
-  display: none;
-}
-
-.video-modal__player.is-loading .video-modal__video {
-  opacity: 0.35;
 }
 
 .video-modal__video[hidden],

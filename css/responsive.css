@@ -96,6 +96,45 @@
   display: none;
 }
 
+/* —— Mobile hero contact (<768px) —— */
+@media (max-width: 767px) {
+  .hero__contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0.65rem;
+    top: 0.65rem;
+    right: auto;
+    bottom: auto;
+    margin: 0;
+    pointer-events: auto;
+  }
+
+  .hero__contact .contact-badge {
+    width: clamp(5.25rem, 26vw, 6.75rem);
+    height: clamp(5.25rem, 26vw, 6.75rem);
+  }
+
+  .hero__contact-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.85rem 1.25rem;
+    border: none;
+    border-radius: var(--radius-btn-pill);
+    background: var(--figma-blue-nav);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-lh);
+    color: var(--figma-white);
+    text-decoration: none;
+  }
+}
+
 /* —— Mobile (<640px) —— */
 @media (max-width: 639px) {
   .site-header__inner {
