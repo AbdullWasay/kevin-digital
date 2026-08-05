@@ -96,18 +96,22 @@
   display: none;
 }
 
-/* —— Mobile hero contact (<768px) —— */
+/* —— Mobile hero contact (<768px): pin badge to top-left of photo —— */
 @media (max-width: 767px) {
+  .hero__image-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
   .hero__contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     position: absolute;
-    left: 0.65rem;
-    top: 0.65rem;
+    left: 0.75rem;
+    top: 0.75rem;
     right: auto;
     bottom: auto;
     margin: 0;
+    z-index: 20;
     pointer-events: auto;
   }
 

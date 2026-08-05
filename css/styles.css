@@ -469,34 +469,12 @@ ul {
 .hero__contact {
   display: none;
   position: absolute;
-  z-index: 10;
-  right: 12rem;
-  top: 6rem;
+  z-index: 20;
   pointer-events: none;
 }
 
 .hero__contact > * {
   pointer-events: auto;
-}
-
-@media (min-width: 768px) {
-  .hero-section .page-container {
-    position: relative;
-  }
-
-  .hero__image-wrap {
-    position: static;
-  }
-
-  .hero__contact {
-    display: block;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero__contact {
-    top: 7rem;
-  }
 }
 
 .hero__image-wrap {
@@ -511,6 +489,31 @@ ul {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Desktop: badge floats near hero copy, not on the photo */
+@media (min-width: 768px) {
+  .hero-section .page-container {
+    position: relative;
+  }
+
+  .hero__image-wrap {
+    position: static;
+  }
+
+  .hero__contact {
+    display: block;
+    right: 12rem;
+    top: 6rem;
+    left: auto;
+    bottom: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__contact {
+    top: 7rem;
+  }
 }
 
 .hero-section .page-container {
