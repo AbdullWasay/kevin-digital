@@ -66,11 +66,11 @@
       "goal.label": "Ziel:",
       "stats.quote":
         "Jedes Projekt fokussiert messbare Ergebnisse wie mehr Sichtbarkeit, stärkeres Engagement und langfristige digitale Reichweite.",
-      "kpi.reach": "Social-Media-Reichweite",
-      "kpi.tiktok": "Generierte TikTok-Views",
-      "kpi.youtube": "Verwaltete YouTube-Videos",
       "kpi.monetized": "Monetarisierte digitale Kanäle",
-      "kpi.growth": "Konstantes Publikumswachstum",
+      "kpi.channels": "Verwaltete digitale Kanäle",
+      "kpi.reach": "Gesamte Social-Media-Reichweite",
+      "kpi.facebook": "Generierte Facebook-Views",
+      "kpi.youtube": "Generierte YouTube-Views",
       "cases.title": "Case Studies",
       "cases.copy":
         "Ob Online-Präsenz, automatisierte Abläufe oder Reiseplanung — ich biete strukturierte Lösungen, die auf Ihre Ziele zugeschnitten sind.",
@@ -183,11 +183,11 @@
       "goal.label": "Goal:",
       "stats.quote":
         "Each project focuses on measurable results such as increased visibility, stronger engagement, and long-term digital reach.",
-      "kpi.reach": "Social media reach",
-      "kpi.tiktok": "TikTok views generated",
-      "kpi.youtube": "YouTube videos managed",
-      "kpi.monetized": "Monetized digital channels",
-      "kpi.growth": "Consistent audience growth",
+      "kpi.monetized": "Monetized Digital Channels",
+      "kpi.channels": "Digital Channels Managed",
+      "kpi.reach": "Total Social Media Reach",
+      "kpi.facebook": "Facebook Views Generated",
+      "kpi.youtube": "YouTube Views Generated",
       "cases.title": "Case Studies",
       "cases.copy":
         "Whether you want to grow your online presence, automate operations, or plan an unforgettable trip, I provide structured solutions tailored to your goals.",

@@ -24,7 +24,7 @@
       if (value < 0.05) return "";
       return value.toFixed(decimals) + unit + suffix;
     }
-    if (unit === "k") {
+    if (unit === "k" || unit === "K") {
       if (value < 1) return "";
       return Math.round(value) + unit + suffix;
     }
